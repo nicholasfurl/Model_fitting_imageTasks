@@ -32,7 +32,7 @@ tic
 
 %The idea was to save data in files along the way as needed. But as
 %implemented now, later sections are dependent on previous ones.
-check_params = 0;       %fit the same model that created the data and output estimated parameters
+check_params = 1;       %fit the same model that created the data and output estimated parameters
 make_est_model_data = 1;
 use_file_for_plots = 1; %Set the above to zero and this to 1 and it'll read in a file you specify (See filename_for_plots variable below) and make plots of whatever analyses are in the Generate_params structure in that file;
 make_plots = 1;         %if 1, plots the results
@@ -57,8 +57,6 @@ subjects = 1:64;    %big trust sub nums
 IC = 2; %1 if AIC, 2 if BIC
 analyze_value_positions = 1;    %Create plots with psychometric curves, their thresholds (model fits) and their correlations (nbins_psi hardwired at function call)
 do_io = 1;  %If a 1, will add io performance as a final model field when make_est_model_data is switched to 1.
-
-
 
 
 if check_params == 1;
@@ -684,8 +682,8 @@ end;
 
 %For some reason, some participants have ratings in match and small trust have 425 entries
 %and others have 426. If 425, I'm going to add a NaN for number 426 so they
-%can be put together into one materix. But the face numbers for these two types of
-%participant don't match the filename lists (so face 100 in a 425 ratinmg
+%can be put together into one matrix. But the face numbers for these two types of
+%participant don't match the filename lists (so face 100 in a 425 rating
 %participant is not face 100 in a 426 rating participant). So these
 %matrices should not be averaged or used to plot distributions unless they
 %are redone so they are sorted by filename instead of filenumber. It

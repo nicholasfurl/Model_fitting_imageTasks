@@ -1,50 +1,56 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-function [] = fit_models_face_1;
+function [] = fit_models_gorillaStudies(all_draws_set,log_or_not);
 
 tic
 
-addpath(genpath('C:\matlab_files\fiance\parameter_recovery\beta_fixed_code\Model_fitting_imageTasks\FMINSEARCHBND'))
-
-%The idea was to save data in files along the way as needed. But as
-%implemented now, later sections are dependent on previous ones.
+which_study = 4;    %studies 1, 2 and 3 are in fit_models_matlabStudies.m. So start with %study 4:
 check_params = 1;       %fit the same model that created the data and output estimated parameters
 make_est_model_data = 1;
 use_file_for_plots = 0; %Set the above to zero and this to 1 and it'll read in a file you specify (See filename_for_plots variable below) and make plots of whatever analyses are in the Generate_params structure in that file;
-make_plots = 0;         %if 1, plots the results
-all_draws_set = 1;          %You can toggle how the ll is computed here for all models at once if you want or go below and set different values for different models manually in structure
-log_or_not = 0; %I'm changing things so all simulated data is logged at point of simulation (==1) or not
+make_plots = 1;         %if 1, plots the results
+
 %1: cutoff 2: Cs 3: dummy (formerly IO in v2) 4: BV 5: BR 6: BPM 7: Opt 8: BPV
-%(I keep model 3 as a legacy for IO because analyseSecertaryNick_2021
+%(I keep model 3 as a legacy for IO because analyseSecretaryNick_2021
 %looks for identifiers 4 and 5 for BV and BR and needs that for v2. Also it keeps the same color scheme as v2)
-do_models = [1 2 4 5 7];    %These are now what v2 called model identifiers - Applies at the moment to both make_model_data and check_params;
-comment = sprintf('imageTask_face_1');    %The filename will already fill in basic parameters so only use special info for this.
+do_models = [1 2 4 5 7 ];    %These are now what v2 called model identifiers - Applies at the moment to both make_model_data and check_params;
+comment = sprintf('imageTask_gorilla_study%02d',which_study);     %The filename will already fill in basic parameters so only use special info for this.
 outpath = 'C:\matlab_files\fiance\parameter_recovery\beta_fixed_code\Model_fitting_imageTasks\outputs';
 %Unfortunately still needs to be typed in manually
-filename_for_plots = 'C:\matlab_files\fiance\parameter_recovery\beta_fixed_code\Model_fitting_imageTasks\outputs\out_new_ll1_bounds_Log0vals_20230910.mat';
+filename_for_plots = [outpath filesep '.mat';
 %These correspond to identifiers (not configured implementations like in v2) in the v3_sweep version
-model_names = {'CO' 'Cs' 'IO' 'BV' 'BR' 'BPM' 'Opt' 'BPV' }; %IO is a placeholder, don't implement
+model_names = {'Cut off' 'Cs' 'IO' 'BV' 'BR' 'BPM' 'Opt' 'BPV' }; %IO is a placeholder, don't implement
 num_model_identifiers = size(model_names,2);
-subjects = 1:64; 
+% subjects = 1:64;    %big trust sub nums
+% subjects = 1;    %big trust sub nums
 IC = 2; %1 if AIC, 2 if BIC
-analyze_value_positions = 0;    %Create plots with psychometric curves, their thresholds (model fits) and their correlations (nbins_psi hardwired at function call)
+analyze_value_positions = 1;    %Create plots with psychometric curves, their thresholds (model fits) and their correlations (nbins_psi hardwired at function call)
 do_io = 1;  %If a 1, will add io performance as a final model field when make_est_model_data is switched to 1.
-
 
 
 if check_params == 1;
     
     disp('Getting subject data ...');
     num_subs_found = 0;
+    
+    %This is different from others. Get's all the subs at once and then
+    %peels off the correct one when the time comes.
+    
+    %now returns (preserving legacy variable names):
+    %"mean ratings" which is actually 90*num_subs lists of phase 1 ratings
+    %seq_vals, which is 6*8*num_subs lists of sequence values and
+    %output, which is now 6*num_subs number of subject draws for each sequence
+    [mean_ratings_all seq_vals_all output_all] = get_sub_data;
+    
+    subjects = 1:size(mean_ratings_all,2);
+    
     for subject = subjects;
         
-        %sub_fail 1*1, female 1*1, mean_ratings num_stim*1, seq_vals seqs*opts, output seqs*1
-        %Note that ratings data are scaled 1 to 100 by this function.
-        [sub_fail female mean_ratings seq_vals output] = get_sub_data_matlab(subject);
+        %peel off the relevant subject.
+        mean_ratings = mean_ratings_all(:,subject);
+        seq_vals = seq_vals_all(:,:,subject);
+        output = output_all(:,subject);
         
-        if sub_fail == 0;
-            continue;
-        end;
         num_subs_found = num_subs_found + 1;
         
         %Get ranks
@@ -70,14 +76,14 @@ if check_params == 1;
     %the basic info you might need
     Generate_params.analyze_value_positions = analyze_value_positions;  %make psychometric plots if a 1
     %     Generate_params.IC = IC;    %AIC (0) or BIC (1) correction?
-    Generate_params.log_or_not = log_or_not;
-    Generate_params.all_draws_set = all_draws_set;
+    Generate_params.log_or_not = 1;
+    Generate_params.all_draws_set = 1;
     Generate_params.do_models_identifiers = do_models;
     Generate_params.num_subs =  size(Generate_params.seq_vals,3);
     Generate_params.num_seqs =  size(Generate_params.seq_vals,1);
     Generate_params.seq_length =  size(Generate_params.seq_vals,2);
     Generate_params.num_vals = size(Generate_params.ratings,1);
-    Generate_params.rating_bounds = [1 100];    %Either Gorilla so already 1 to 100 or the function that gets the matlab behavioural data rescaled it to be 1 to 100
+    Generate_params.rating_bounds = [1 100];    %What is min and max of rating scale? (Works for big trust anyway)
     if log_or_not == 1;
         Generate_params.rating_bounds = log(Generate_params.rating_bounds);
     end;
@@ -126,9 +132,10 @@ if check_params == 1;
     if log_or_not == 1;
         model_template.BVmid = log(model_template.BVmid);
         model_template.BRmid = log(model_template.BRmid);
-        %         model_template.BP = log(model_template.BP);
-        %         model_template.optimism = log(model_template.optimism);
-        %         model_template.BPV = log(model_template.BPV);
+        %BP & BVP would be in log units too but can't take negative or
+        %0th values so it's best to manually set their starting params
+        %and let the estimation find the best value for the context.
+        %That means fix them manually if you want them to be logged
     end;
     
     
@@ -216,23 +223,9 @@ if check_params == 1;
     %%%%%DO THE MODEL FITTING!!!!!!%%%%%%%%%%%%
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     
-    %set upper and lower bounds for the different models (A bit
-    %disorganised to put it here, I admit, but this is a new section of
-    %code grafted onto a much older structure so this bit will look a little more ad hoc
+    %         %How many models to do in this section?
+    %     do_models = Generate_params.do_models_identifiers;
     
-    %I'll just specify all the bounds together here and then assign them to
-    %Generate_params model structures and pass them to fminsearch in the
-    %model loop immediately below
-    fitting_bounds.CO = [1 Generate_params.seq_length];   %cut off, it's a threshold that must be inside sequence
-    fitting_bounds.Cs = [-Inf Inf];   %cost to sample. In practice will be between -1 and 1 but not good theoretical reason to constrain
-    fitting_bounds.BV = [1 Generate_params.seq_length]; %biased values (O), it's a threshold that must be inside sequence
-    fitting_bounds.BR = [1 Generate_params.seq_length]; %biased reward (O), it's a threshold that must be inside sequence
-    fitting_bounds.BP = [0 100];  %biased prior, value can't exist outside the rating scale
-    fitting_bounds.Opt = [0 100];  %optimism, value can't exist outside the rating scale
-    fitting_bounds.BV = [0 100];  %biased variances, can't be wider than the whole rating scale
-    fitting_bounds.beta = [0 100];   %if not sometimes produces crazy values in the thousands, though rarely
-    
-
     %In the previous section, we only assigned to the Generate_param
     %struct the models that were in the do_models in that section. So
     %this can only operate on those models (until I start implementing these sections from datafiles later).
@@ -242,7 +235,6 @@ if check_params == 1;
             
             
             %You want to fit one model for one subject at a time
-            %             Generate_params.current_model = Generate_params.do_models_identifiers(model);
             Generate_params.current_model = model;
             Generate_params.num_subs_to_run = sub;
             
@@ -252,13 +244,7 @@ if check_params == 1;
                 Generate_params.model(model).beta ...
                 ];
             
-            %Assign upper and lower bounds
-            test_name = Generate_params.model( Generate_params.current_model ).name;
-            Generate_params.model(model).lower_bound = eval(sprintf('fitting_bounds.%s(1)',test_name));
-            Generate_params.model(model).upper_bound = eval(sprintf('fitting_bounds.%s(2)',test_name)); 
-            Generate_params.model(model).lower_bound_beta = fitting_bounds.beta(1);
-            Generate_params.model(model).upper_bound_beta = fitting_bounds.beta(2);
-            
+            %                 options = optimset('Display','iter');
             warning('off');
             
             disp(...
@@ -274,12 +260,11 @@ if check_params == 1;
             [Generate_params.model(model).estimated_params(sub,:) ...
                 ,  Generate_params.model(model).ll(sub,:) ...
                 , exitflag, search_out] = ...
-                fminsearchbnd(  @(params) f_fitparams( params, Generate_params ), ...
-                    params,...
-                    [Generate_params.model(model).lower_bound Generate_params.model(model).lower_bound_beta], ...
-                    [Generate_params.model(model).upper_bound Generate_params.model(model).upper_bound_beta] ...
-                    );
-    
+                fminsearch(  @(params) f_fitparams( params, Generate_params ), params);
+            
+            %                     fminsearch(  @(params) f_fitparams( params, Generate_params ), params, options);
+            
+            
         end;    %Loop through subs
         
         %Should save after each model completed
@@ -304,7 +289,8 @@ if make_est_model_data == 1;
         
     end;
     
-        %Run ideal observer if configured to do so
+    
+    %Run ideal observer if configured to do so
     if Generate_params.do_io == 1;
         
         Generate_params = run_io(Generate_params);
@@ -342,6 +328,7 @@ end;        %if make_est_model_data?
 %%%%%PLOT!%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 if make_plots == 1;
+    
     
     %Use data already in workspace because computed above by or ?
     %Or open a file where these things were computed on previous run?
@@ -381,10 +368,8 @@ for sub = 1:Generate_params.num_subs;
     fields = fieldnames(Generate_params.model(Generate_params.current_model));
     for field = Generate_params.model(Generate_params.current_model).this_models_free_parameters';   %loop through all free parameter indices (except beta)
         
-        %theoretical parameters
         Generate_params.model(Generate_params.current_model).(fields{field}) = ...
             Generate_params.model(Generate_params.current_model).estimated_params(sub,it);
-        
         it=it+1;
         
     end;
@@ -545,8 +530,8 @@ for num_subs_found = Generate_params.num_subs_to_run;
             %Reverse 0s and 1's for ChoiceCont
             choiceCont = double(~choiceStop);
             
-%             ranks(sequence,this_sub) = dataList( num_samples(sequence,this_sub) );
-            
+%                     ranks(sequence,this_sub) = dataList( num_samples(sequence,this_sub) );
+
             
         else;   %Any Bayesian models
             
@@ -554,8 +539,7 @@ for num_subs_found = Generate_params.num_subs_to_run;
                 analyzeSecretaryNick_2021(Generate_params,list);
 
         end;    %Cutoff or other model?
-            
-%             num_samples(sequence,this_sub) = find(difVal<0,1,'first');  %assign output num samples for Bruno model
+
             
             choiceValues = [choiceCont; choiceStop]';
             
@@ -573,7 +557,12 @@ for num_subs_found = Generate_params.num_subs_to_run;
             test = rand(1000,Generate_params.seq_length);
             for iteration = 1:size(test,1);
                 
-                samples_this_test(iteration) = find(cprob(:,2)'>test(iteration,:),1,'first');
+                if ~isempty(find(cprob(:,2)'>test(iteration,:),1,'first'));
+                    samples_this_test(iteration) = find(cprob(:,2)'>test(iteration,:),1,'first');
+                else
+                    samples_this_test(iteration) = Generate_params.seq_length;
+                end;
+                
                 ranks_this_test(iteration) = dataList( samples_this_test(iteration) );
                 
             end;    %iterations
@@ -581,11 +570,11 @@ for num_subs_found = Generate_params.num_subs_to_run;
             num_samples(sequence,this_sub) = round(mean(samples_this_test));
             ranks(sequence,this_sub) = round(mean(ranks_this_test));
             
+%             num_samples(sequence,this_sub) = find(difVal<0,1,'first');  %assign output num samples for Bruno model
             
-
         
         %...and its rank
-        %         ranks(sequence,this_sub) = dataList( num_samples(sequence,this_sub) );
+%         ranks(sequence,this_sub) = dataList( num_samples(sequence,this_sub) );
         %Accumulate action values too so you can compute ll outside this function if needed
         choiceStop_all(sequence, :, this_sub) = choiceStop;
         choiceCont_all(sequence, :, this_sub) = choiceCont;
@@ -599,86 +588,76 @@ end;    %loop through subs
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-function [sub_fail rated_female mean_ratings seq_vals draws] = get_sub_data_matlab(subject);
+function [mean_ratings seq_vals output] = get_sub_data;
 
-%sub_fail indicates whether full data could be extracted from this
-%subject or whether subject should be skipped in outer loop that
-%calls get_sub_data. Can be used to decide whether to increment
-%num_subs_found if you outout 1 for success and 0 for fail;
+%In this version, we'll extract all the subject data here before we embark
+%on the subject loop in the main body. That means another subject loop
+%inside of here, unfortunately.
 
-data_folder = 'C:\matlab_files\fiance\parameter_recovery\beta_fixed_code\Model_fitting_imageTasks\face_study_1_av';
-rating_files = dir( [data_folder filesep sprintf('av_ratings_sub%02d*.mat',subject)] );
-seq_files = dir( [data_folder filesep sprintf('aav_sequence_sub%02d*.mat',subject)] );
+%sub num then data (rating) for holidays then foods then female faces than male faces
+temp_r = xlsread('C:\matlab_files\fiance\online_domains_01\online_replication\all_attractiveness_ratings_noheader_online.xlsx');
+%There are some nans hanging on the end of domains with less than the max num of subjects. Get rid of them nice are early (here)
+data = [temp_r(~isnan(temp_r(:,5)),5:6); temp_r(~isnan(temp_r(:,7)),7:8)];  %this time, concatenate columsn for females, then males
+%sub num then data (draws) for holidays then foods then female faces than male faces
+[temp_d dummy dummy] = xlsread('C:\matlab_files\fiance\online_domains_01\online_replication\all_sequences_online.xlsx');
+draws = [temp_d(~isnan(temp_d(:,5)),5:6); temp_d(~isnan(temp_d(:,7)),7:8)];
+%These cols are 1:domain code (1=holidays, 2=food, 3=female, 4=male), 2:event num, 3: sub_id, 4-11: the 8 filenames for this sequence
+[dummy dummy temp_f] = xlsread('C:\matlab_files\fiance\online_domains_01\online_replication\all_domains_online_sequence_fnames.xlsx');
+seq_fnames = temp_f(find(cell2mat(temp_f(:,1)) == 3 | cell2mat(temp_f(:,1)) == 4),:);
+%list of female faces
+female_faces = zeros(size(seq_fnames,1),1);
+female_faces( 1:numel(find(cell2mat(temp_f(:,1)) == 3) )) = 1;
+%filename index key (cols: holiday, food, female, male) 90 filenames key to ratings
+[dummy1 dummy2 key_ratings] = xlsread('C:\matlab_files\fiance\online_domains_01\domains_key_ratings_fnames.xlsx');
+key_this_domain_f = key_ratings(:,3);   %separate list for male faces
+key_this_domain_m = key_ratings(:,4);   %separate list for female faces
 
-%In case I need to break
-sub_fail = 0;
-rated_female = [];
-mean_ratings = [];
-seq_vals = [];
-output = [];
-draws = [];
 
+num_seq_pos = 8;
+these_sub_ids = unique( cell2mat(seq_fnames(:,3)) );
 
-num_rating_files = [];
-if ~isempty(rating_files);  %is there a subject?
-    num_rating_files = size( rating_files, 1); %how many ratings (there's usually three)?
-else
-    disp(sprintf('there is no subject %d',subject));
-    return;   %skip to next sub if this sub has no files
-end;
-
-%rated_female is 1 if female face, 0 if male
-if ~isempty( strfind(rating_files(1).name,'sex01') );
-    rated_female = 1;
-elseif ~isempty( strfind(rating_files(1).name,'sex00') );
-    rated_female = 0;
-end;
-
-%get and store ratings data
-for file = 1:num_rating_files;
+for sub_id = 1:numel(these_sub_ids);
     
-    clear output;   %just in case
-    load( [data_folder filesep rating_files(file).name],'output'); %columns: trial_num, filename, face_num, rating
-    output = sortrows(output,3); %sort output by face_num
+    %We're going to replace seq filenames with ratings. Ready the sequence filenames
+    this_sub_indices = find( cell2mat(seq_fnames(:,3)) == these_sub_ids(sub_id) );  %index into one of the subs
+    this_sub_data = seq_fnames(this_sub_indices,4:11);  %filenames for sequences for this sub
+    this_sub_num_seqs = numel(this_sub_indices);    %Should always be 6 sequences
+    if exist('key_this_domain_f');  %if rating filenames were divided into male and female earlier
+        sexes_this_subject = female_faces(this_sub_indices,1);
+        if sexes_this_subject(1) == 1;
+            key_this_domain = key_this_domain_f;
+        else
+            key_this_domain = key_this_domain_m;
+        end;
+        
+    end;    %check if i need to assign sex specific face key
     
-    %correct cogent codes
-    ratings( find(cell2mat(output(:,4)) > 70),file) = cell2mat( output(find(cell2mat(output(:,4)) > 70),4) ) - 75;  %if number pad
-    ratings( find(cell2mat(output(:,4)) < 70),file) = cell2mat( output(find(cell2mat(output(:,4)) < 70),4) ) - 27;  %if top of keyboard numbers
+    %We're going to replace seq filenames with ratings. Ready the ratings
+    this_sub_ratings_indices = find(data(:,1)==these_sub_ids(sub_id)); %This should find all the ratings for this subject in the same domain as the sequences. Should be 90
+    this_sub_ratings = data(this_sub_ratings_indices,2);   %ratings themselves for this subject, should be 90. Should be sorted by key
     
-    %NaN other weird values
-    if numel(find( ratings(:,file) < 1 ))>0 | numel(find( ratings(:,file) > 9 ))>0
-        ratings( find( ratings(:,file) < 1 ), file ) = NaN;    %in case subject presses wrong key, log will choke later
-        ratings( find( ratings(:,file) > 9 ), file ) = NaN;    %in case subject presses wrong key
-    end;    %if any residual weird keypresses
+    mean_ratings(:,sub_id) = this_sub_ratings;  %first output of this function
     
-end;    %loop through ratings files
-
-mean_ratings = nanmean( ratings' )';    %raw ratings
-%new to this version
-%scale them to be between 1 and 100 (so all studies will be on the same scale)
-% min_ratings = min(mean_ratings);   %what is new min after trandform?
-% max_ratings = max(mean_ratings);   %what is new max after transform?
-% mean_ratings = (mean_ratings - min_ratings)/(max_ratings - min_ratings);
-old_min = 1;
-old_max = 9;
-new_min = 1;
-new_max = 100;
-mean_ratings = ((new_max-new_min)/(old_max-old_min))*(mean_ratings - old_max)+100;
-
-%now load sequence data for this subject
-load( [data_folder filesep seq_files.name], 'rows_data','output' );  %get the list of face numbers in the sequences
-
-%Get numbers of draws
-draws = cell2mat(output( find( cell2mat(output(:,6))==29 ), 3 ));  %draws
-
-%need the list of values for each facenumber
-seq_vals = zeros(size(rows_data));
-for i=1:numel(rows_data);
-    seq_vals(i) = mean_ratings( rows_data(i) );     %raw values
-end;
-
-sub_fail = 1;
-
+    %Get number of samples for this subject's sequence (Will use in sequence loop to get ranks for each sequence)
+    clear this_sub_draws;
+    this_sub_draws = draws(find(draws(:,1)==these_sub_ids(sub_id)),2);    %Should return the 5/6 sequence indices; subids in draws file better match up with subids in sequience lists (they should)
+    
+    %next function output
+    output(:,sub_id) = this_sub_draws;
+    
+    for seq_num = 1:this_sub_num_seqs;
+        for seq_pos = 1:num_seq_pos;
+            
+            filename_to_find = seq_fnames(this_sub_indices(seq_num),seq_pos+3); %What is this filename?
+            idx = find(strcmp(key_this_domain, filename_to_find));  %find the index corresponding to the sequence position's filename
+            this_seq_pos_rating = this_sub_ratings(idx);    %get rating corresponding to the index for this filename
+            
+            %next main output
+            seq_vals(seq_num,seq_pos,sub_id) = this_seq_pos_rating;
+            
+        end;    %loop through sequence positions
+    end;    %loop through sequences
+end;   %loop through subs
 
 
 
@@ -907,38 +886,31 @@ for model = 1:size(choice_trial,3);
     
     %average rating as function of serial positon
     legend_locs = [0.5:-0.05:(0.5 - (0.05*5))];
-    %
-    %     %proportion choices
-    %     figure(h3); subplot( 2,2,3); hold on;
-    %     sph = shadedErrorBar(1:size(mean_position_choices,1),mean_position_choices(:,model),ci_position_choices(:,model),{'MarkerFaceColor',plot_cmap(param_to_fit(model)+1,:),'MarkerEdgeColor',plot_cmap(param_to_fit(model)+1,:),'Marker','o','MarkerSize',markersize,'LineStyle','-'},1); hold on;
-    %     set(sph.mainLine,'Color',plot_cmap(param_to_fit(model)+1,:));
-    %     set(sph.patch,'FaceColor',plot_cmap(param_to_fit(model)+1,:));
-    %     set(sph.edge(1),'Color',plot_cmap(param_to_fit(model)+1,:));
-    %     set(sph.edge(2),'Color',plot_cmap(param_to_fit(model)+1,:));
-    %     %         text(3,legend_locs(model),legend_names{model},'Color',plot_cmap(param_to_fit(model)+1,:),'FontSize',12,'FontName','Arial');
-    %     box off;
-    %     %axis square;
-    %     set(gca,'FontSize',12,'FontName','Arial','xtick',[1:size(b,1)],'ytick',[0.1:0.1:0.8],'Ylim',[0 0.5],'Xlim',[1 size(b,1)],'LineWidth',2);
-    %     xlabel('Position in Sequence'); ylabel('Proportion Choices');
-    %
-    %psychometric function parameters
-    figure(h3); subplot( 1,2,1 ); hold on;
-    legend_positions = [3:-.5:0];
-    errorbar(1:size(b,1),b(:,model),b_ci(:,model),'Color',plot_cmap(param_to_fit(model)+1,:),'MarkerFaceColor',plot_cmap(param_to_fit(model)+1,:),'MarkerEdgeColor',plot_cmap(param_to_fit(model)+1,:),'Marker','o','MarkerSize',markersize,'LineStyle','-','LineWidth',1); hold on;
-    if model == 1;
-        text(2,legend_positions(model),'Participants', 'Color',plot_cmap(1,:), 'FontSize',12,'FontName','Arial');
-    else
-        text(2,legend_positions(model),legend_labels{model-1}, 'Color',plot_cmap(param_to_fit(model)+1,:), 'FontSize',12,'FontName','Arial');
-    end;
+    
+    %proportion choices
+    figure(h3); subplot( 2,2,3); hold on;
+    sph = shadedErrorBar(1:size(mean_position_choices,1),mean_position_choices(:,model),ci_position_choices(:,model),{'MarkerFaceColor',plot_cmap(param_to_fit(model)+1,:),'MarkerEdgeColor',plot_cmap(param_to_fit(model)+1,:),'Marker','o','MarkerSize',markersize,'LineStyle','-'},1); hold on;
+    set(sph.mainLine,'Color',plot_cmap(param_to_fit(model)+1,:));
+    set(sph.patch,'FaceColor',plot_cmap(param_to_fit(model)+1,:));
+    set(sph.edge(1),'Color',plot_cmap(param_to_fit(model)+1,:));
+    set(sph.edge(2),'Color',plot_cmap(param_to_fit(model)+1,:));
+    %         text(3,legend_locs(model),legend_names{model},'Color',plot_cmap(param_to_fit(model)+1,:),'FontSize',12,'FontName','Arial');
     box off;
-    set(gca,'FontSize',12,'FontName','Arial','xtick',[1:size(b,1)],'Xlim',[1 size(b,1)],'YLim',[0 num_positions],'LineWidth',2);
-    xlabel('Position in sequence'); ylabel('Point of subjective equality');
+    %axis square;
+    set(gca,'FontSize',12,'FontName','Arial','xtick',[1:size(b,1)],'ytick',[0.1:0.1:0.8],'Ylim',[0 0.5],'Xlim',[1 size(b,1)],'LineWidth',2);
+    xlabel('Position in Sequence'); ylabel('Proportion Choices');
+    
+    %psychometric function parameters
+    figure(h3); subplot( 2,1,1 ); hold on;
+    errorbar(1:size(b,1),b(:,model),b_ci(:,model),'Color',plot_cmap(param_to_fit(model)+1,:),'MarkerFaceColor',plot_cmap(param_to_fit(model)+1,:),'MarkerEdgeColor',plot_cmap(param_to_fit(model)+1,:),'Marker','o','MarkerSize',markersize,'LineStyle','-','LineWidth',1); hold on;
+    box off;
+    set(gca,'FontSize',12,'FontName','Arial','xtick',[1:size(b,1)],'Xlim',[1 size(b,1)],'LineWidth',2);
+    xlabel('Position in Sequence'); ylabel('Point of Subjective Equality');
     
     if model ~=1;   %no subjects
-        
         %model correlations with proportion choice
-        figure(h3); subplot( 1,2,2 ); hold on;
-        %         legend_positions = [1.1:-.05:0];
+        figure(h3); subplot( 2,2,4 ); hold on;
+        legend_positions = [1.1:-.05:0];
         
         handles = plotSpread(r(:,model-1), ...
             'xValues',model,'distributionColors',plot_cmap(param_to_fit(model)+1,:),'distributionMarkers','.', 'spreadWidth', sw);
@@ -946,23 +918,13 @@ for model = 1:size(choice_trial,3);
         bar(model,r_graph(model), ...
             'FaceColor',plot_cmap(param_to_fit(model)+1,:),'FaceAlpha',f_a,'EdgeColor',[0 0 0] );
         
-        % %         text(1.5,legend_positions(model),legend_labels{param_to_fit(model)}, 'Color',plot_cmap(param_to_fit(model)+1,:), 'FontSize',12,'FontName','Arial');
-        %          text(1.5,legend_positions(model),legend_labels{model-1}, 'Color',plot_cmap(param_to_fit(model)+1,:), 'FontSize',12,'FontName','Arial');
-        %
-        set(gca,'FontSize',12,'FontName','Arial', 'XTick',[],'xticklabel',{[]},'YTick',[0:.2:1],'yticklabel',{[0:.2:1]},'LineWidth',2);
-        ylabel('Model-participant correlation');
+        %         text(1.5,legend_positions(model),legend_labels{param_to_fit(model)}, 'Color',plot_cmap(param_to_fit(model)+1,:), 'FontSize',12,'FontName','Arial');
+        text(1.5,legend_positions(model),legend_labels{model-1}, 'Color',plot_cmap(param_to_fit(model)+1,:), 'FontSize',12,'FontName','Arial');
+        
+        set(gca,'FontSize',12,'FontName','Arial', 'xticklabel',{[]},'LineWidth',2);
+        ylabel('Model-participant Correlation');
         ylim([0 1.0]);
         xlim([1 numel(r_graph)+0.5]);
-        
-        x_axis_test_offset = .05;
-        this_offset = -x_axis_test_offset*diff(ylim);
-        text( model, this_offset ...
-            ,sprintf('%s',legend_labels{model-1}) ...
-            ,'Fontname','Arial' ...
-            ,'Fontsize',12 ...
-            ,'Rotation',25 ...
-            ,'HorizontalAlignment','right' ...
-            );
         
     end;    %If not a subject
     
@@ -980,7 +942,7 @@ for model = 1:size(choice_trial,3);
         axis square;
         set(h,'Marker','o','MarkerSize',6,'MarkerEdgeColor',pm_line_colors(position_line,:),'MarkerFaceColor',pm_line_colors(position_line,:),'Color',pm_line_colors(position_line,:),'LineStyle','-','LineWidth',2);
         set(gca,'FontSize',12,'FontName','Arial','xtick',[1:size(position_data,1)],'xlim',[0.5 size(position_data,1)+0.5],'ylim',[0 1.1],'ytick',[0:0.2:1],'LineWidth',2);
-        xlabel('Rating level'); ylabel('Proportion Choices'); box off;
+        xlabel('Attractiveness Bin'); ylabel('Proportion Choices'); box off;
         
     end;    %position lines
     
@@ -989,61 +951,6 @@ for model = 1:size(choice_trial,3);
     end;
     
 end;    %loop through models
-
-
-%the model loop is done but we need to add the sig tests using the accumulated model data
-%stole and modified code from BIC plot
-%note: this num_models variable counts participants as a model
-if num_models-1 ~= 1 & num_subs > 1;
-    
-    %run and plot ttests
-    figure(h3); subplot( 1,2,2 );
-    pairs = nchoosek(1:num_models-1,2);
-    num_pairs = size(pairs,1);
-    [a In] = sort(diff(pairs')','descend');  %lengths of connecting lines
-    line_pair_order = pairs(In,:);    %move longest connections to top
-    
-    %Where to put top line?
-    y_inc = .025;
-    ystart = max(max(r)) + y_inc*num_pairs;
-    line_y_values = ystart:-y_inc:0;
-    
-    fprintf(' ');
-    
-    for pair = 1:num_pairs;
-%         
-%         %run ttest this pair (with Fisher r to z)
-%         [h r_pvals(pair) ci stats] = ttest(atanh(r(:,line_pair_order(pair,1))), atanh(r(:,line_pair_order(pair,2))));
-
-          %get Bayes factor too
-        [bf10(pair),r_pvals(pair),ci,stats] = ...
-            bf.ttest( atanh(r(:,line_pair_order(pair,1))) - atanh(r(:,line_pair_order(pair,2))) );
-        
-        %plot result
-        %             subplot(2,4,6); hold on;
-        set(gca,'Ylim',[0 ystart]);
-
-        if r_pvals(pair) < 0.05/size(pairs,1);
-            plot([line_pair_order(pair,1)+1 line_pair_order(pair,2)+1],...
-                [line_y_values(pair) line_y_values(pair)],'LineWidth',4,'Color',[0 0 0]);
-        end;
-        
-        if bf10(pair) < (1/10);
-            plot([line_pair_order(pair,1)+1 line_pair_order(pair,2)+1],...
-                [line_y_values(pair) line_y_values(pair)],'LineWidth',1,'Color',[1 0 1]);
-        end;
-        if bf10(pair) > 10;
-            plot([line_pair_order(pair,1)+1 line_pair_order(pair,2)+1],...
-                [line_y_values(pair) line_y_values(pair)],'LineWidth',1,'Color',[0 1 0]);
-        end;
-%         
-%             plot([line_pair_order(pair,1)+1 line_pair_order(pair,2)+1],...
-%                 [line_y_values(pair) line_y_values(pair)],'LineWidth',2,'Color',[0 0 0]);
-            
-        
-    end;    %loop through ttest pairs
-    
-end;    %Only compute ttests if there is at least one pair of models
 
 
 
@@ -1063,7 +970,7 @@ plot_cmap = hsv(8+1);  %models + subjects
 f_a = 0.1; %face alpha
 sw = 1;  %ppoint spread width
 graph_font = 12;
-x_axis_test_offset = .075;   %What percentage of the y axis range should x labels be shifted below the x axis?
+x_axis_test_offset = .05;   %What percentage of the y axis range should x labels be shifted below the x axis?
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%SAMPLES AND RANKS
@@ -1078,12 +985,10 @@ all_choice_trial(:,:,1) = Generate_params.num_samples'; %Should be subs*seqs*mod
 model_strs = {};
 for this_bar = 1:Generate_params.num_models+1;   %+1 is participants
     
-%     for perf_measure = 1:2;   %samples or ranks
-%     for perf_measure = 1;   %samples
-
+    for perf_measure = 1:2;   %samples or ranks
         
-%         if perf_measure == 1;   %If samples
-            subplot(2,3,1); hold on; %Samples plot
+        if perf_measure == 1;   %If samples
+            subplot(2,2,1); hold on; %Samples plot
             y_string = 'Samples to decision';
             
             if this_bar == 1;   %If participants
@@ -1096,23 +1001,20 @@ for this_bar = 1:Generate_params.num_models+1;   %+1 is participants
                 model_label = Generate_params.model(this_bar-1).name;
             end;    %partricipants or model?
             
-            %accumulate data for output to file later on
-            samples_accum(:,this_bar) = these_data;
+        else;   %If ranks
+            subplot(2,2,2); hold on; %Samples plot
+            y_string = 'Rank of chosen option';
+            if this_bar == 1;   %If participants
+                these_data = nanmean(Generate_params.ranks)';
+                plot_color = [1 0 0];
+                model_label = 'Participants';
+            else;   %if model
+                these_data = nanmean(Generate_params.model(this_bar-1).ranks_est)';
+                plot_color = plot_cmap(Generate_params.model(this_bar-1).identifier+1,:);
+                model_label = Generate_params.model(this_bar-1).name;
+            end;    %partricipants or model?
             
-%         else;   %If ranks
-% %             subplot(2,2,2); hold on; %Samples plot
-% %             y_string = 'Rank of chosen option';
-% %             if this_bar == 1;   %If participants
-% %                 these_data = nanmean(Generate_params.ranks)';
-% %                 plot_color = [1 0 0];
-% %                 model_label = 'Participants';
-% %             else;   %if model
-% %                 these_data = nanmean(Generate_params.model(this_bar-1).ranks_est)';
-% %                 plot_color = plot_cmap(Generate_params.model(this_bar-1).identifier+1,:);
-% %                 model_label = Generate_params.model(this_bar-1).name;
-% %             end;    %partricipants or model?
-%             
-%         end;    %samples or ranks?
+        end;    %samples or ranks?
         
         %average over sequences (rows) but keep sub data (cols) for scatter points
         handles = plotSpread(these_data ...
@@ -1133,9 +1035,7 @@ for this_bar = 1:Generate_params.num_models+1;   %+1 is participants
             ,'fontSize',graph_font ...
             ,'FontName','Arial',...
             'XLim',[0 Generate_params.num_models+2] ...
-            ,'YLim',[0 Generate_params.seq_length] ...
-            ,'LineWidth',2 ...
-            );
+            ,'YLim',[0 Generate_params.seq_length]);
         ylabel(y_string);
         
         this_offset = -x_axis_test_offset*diff(ylim);
@@ -1147,57 +1047,53 @@ for this_bar = 1:Generate_params.num_models+1;   %+1 is participants
             ,'HorizontalAlignment','right' ...
             );
         
-%     end;    %switch between samples and ranks
+    end;    %switch between samples and ranks
     
-%     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%     %%%LOG LIKELIHOOD ANALYSIS
-%     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%     
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    %%%LOG LIKELIHOOD ANALYSIS
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    
     %Still inside model (this_bar) loop
     if this_bar ~=1;
-%         
-%         %%%%%%%%%%%%%%%%%%%%
-%         %%%%Plot of raw ll's
-%         subplot(2,4,2);
-%         
-%         %accumulate ll's for output to file later
-        ll_accum(:,this_bar-1) = Generate_params.model(this_bar-1).ll;
-%         
-%         handles = plotSpread(Generate_params.model(this_bar-1).ll ...
-%             ,'xValues',this_bar ...
-%             ,'distributionColors',plot_color ...
-%             ,'distributionMarkers','.' ...
-%             , 'spreadWidth', sw ...
-%             );
-%         
-%         bar(this_bar,nanmean(Generate_params.model(this_bar-1).ll) ...
-%             ,'FaceColor',plot_color ...
-%             ,'FaceAlpha',f_a ...
-%             ,'EdgeColor',[0 0 0] ...
-%             );
-%         
-%         set(gca ...
-%             ,'XTick',[] ...
-%             ,'fontSize',graph_font ...
-%             ,'FontName','Arial',...
-%             'XLim',[1 Generate_params.num_models+2] ...
-%             ,'LineWidth',2 ...
-%             );
-%         %                     ,'YLim',[0 Generate_params.seq_length]...0
-%         ylabel('Log-likelihood');
-%         
-%         this_offset = -x_axis_test_offset*diff(ylim);
-%         text( this_bar, this_offset ...
-%             ,sprintf('%s',model_label) ...
-%             ,'Fontname','Arial' ...
-%             ,'Fontsize',graph_font ...
-%             ,'Rotation',25 ...
-%             ,'HorizontalAlignment','right' ...
-%             );
+        
+        %%%%%%%%%%%%%%%%%%%%
+        %%%%Plot of raw ll's
+        subplot(2,3,4);
+        
+        handles = plotSpread(Generate_params.model(this_bar-1).ll ...
+            ,'xValues',this_bar ...
+            ,'distributionColors',plot_color ...
+            ,'distributionMarkers','.' ...
+            , 'spreadWidth', sw ...
+            );
+        
+        bar(this_bar,nanmean(Generate_params.model(this_bar-1).ll) ...
+            ,'FaceColor',plot_color ...
+            ,'FaceAlpha',f_a ...
+            ,'EdgeColor',[0 0 0] ...
+            );
+        
+        set(gca ...
+            ,'XTick',[] ...
+            ,'fontSize',graph_font ...
+            ,'FontName','Arial',...
+            'XLim',[1 Generate_params.num_models+2] ...
+            );
+        %                     ,'YLim',[0 Generate_params.seq_length]...0
+        ylabel('Log-likelihood');
+        
+        this_offset = -x_axis_test_offset*diff(ylim);
+        text( this_bar, this_offset ...
+            ,sprintf('%s',model_label) ...
+            ,'Fontname','Arial' ...
+            ,'Fontsize',graph_font ...
+            ,'Rotation',25 ...
+            ,'HorizontalAlignment','right' ...
+            );
         
         %%%%%%%%%%%%%%%%%%%%%%%%
         %Plot of AIC/BIC (Not so relevant if they all have two parameters though)
-        subplot(2,3,2);
+        subplot(2,3,5);
         
         %Model IC
         no_params = numel( Generate_params.model(this_bar-1).this_models_free_parameters ) + 1; %+1 for beta
@@ -1231,7 +1127,6 @@ for this_bar = 1:Generate_params.num_models+1;   %+1 is participants
             ,'fontSize',graph_font ...
             ,'FontName','Arial',...
             'XLim',[1 Generate_params.num_models+2] ...
-            ,'LineWidth',2 ...
             );
         ylabel(a_label);
         
@@ -1258,94 +1153,34 @@ end;    %loop through models
 
 %the model loop is done but we are still working on the AIC/BIC plot and we
 %need to add the sig tests using the accumulated model data
-if Generate_params.num_models ~= 1 & Generate_params.num_subs > 1;
+if Generate_params.num_models ~= 1;
     
-    %Paint ttest / Bayes factor results onto samples graph (This one only
-    %needs participants compared against each of the models
-    %Where to put top line?
-    subplot(2,3,1);
-    
-    num_pairs = numel(Generate_params.do_models_identifiers);
-    y_inc = .5;
-    ystart = max(max(samples_accum)) + y_inc*num_pairs;
-    line_y_values = ystart:-y_inc:0;
-    for pair = 1:num_pairs;
-        
-        [bf10(pair),samples_pvals(pair),ci,stats] = ...
-            bf.ttest( samples_accum(:,1) - samples_accum(:,num_pairs + 2 - pair) );
-        
-        set(gca,'Ylim',[0 ystart]);
-        
-        %distance on plot
-        distance_on_plot = [1 num_pairs + 2 - pair];
-        
-        if samples_pvals(pair) < 0.05/num_pairs;
-            plot(distance_on_plot,...
-                [line_y_values(pair) line_y_values(pair)],'LineWidth',4,'Color',[0 0 0]);
-        end;
-        
-        if bf10(pair) < (1/10);
-            plot(distance_on_plot,...
-                [line_y_values(pair) line_y_values(pair)],'LineWidth',1,'Color',[1 0 1]);
-        end;
-        if bf10(pair) > 10;
-            plot(distance_on_plot,...
-                [line_y_values(pair) line_y_values(pair)],'LineWidth',1,'Color',[0 1 0]);
-        end;
-        
-        
-    end;   %pairs: Loop through comparisons between participants and models
-    
-    %run and plot ttests and Bayesfactor results on the plots above for BIC
-    %graph (This one needs comparisons among all models)
-    subplot(2,3,2);
+    %run and plot ttests on IC averages
     pairs = nchoosek(1:Generate_params.num_models,2);
     num_pairs = size(pairs,1);
     [a In] = sort(diff(pairs')','descend');  %lengths of connecting lines
     line_pair_order = pairs(In,:);    %move longest connections to top
     
-     %Where to put top line?
-     y_inc = 7;
-     ystart = max(max(IC_pps_all_models)) + y_inc*num_pairs;
-     line_y_values = ystart:-y_inc:0;
-     
-     for pair = 1:num_pairs;
-        %
-        %         %run ttest this pair
-        %         [h IC_pp_pvals(pair) ci stats] = ttest(IC_pps_all_models(:,line_pair_order(pair,1)), IC_pps_all_models(:,line_pair_order(pair,2)));
-        %
-        %get Bayes factor too
-        [bf10(pair),IC_pp_pvals(pair),ci,stats] = bf.ttest( IC_pps_all_models(:,line_pair_order(pair,1)) - IC_pps_all_models(:,line_pair_order(pair,2)) );
+    %Where to put top line?
+    y_inc = 2;
+    ystart = max(max(IC_pps_all_models)) + y_inc*num_pairs;
+    line_y_values = ystart:-y_inc:0;
+    
+    for pair = 1:num_pairs;
+        
+        %run ttest this pair
+        [h IC_pp_pvals(pair) ci stats] = ttest(IC_pps_all_models(:,line_pair_order(pair,1)), IC_pps_all_models(:,line_pair_order(pair,2)));
         
         %plot result
         %             subplot(2,4,6); hold on;
         set(gca,'Ylim',[0 ystart]);
         
-        %         if bf10(pair) < (1/10);
-        %             pair_color = [1 0 1];   %magenta
-        %         elseif IC_pp_pvals(pair) < 0.05/size(pairs,1) & bf10(pair) > 10;
-        %             pair_color = [0 .5 0];
-        %         elseif IC_pp_pvals(pair) < 0.05/size(pairs,1) & bf10(pair) < 10;
-        %             pair_color = [0 0 0];
-        %         elseif IC_pp_pvals(pair) > 0.05/size(pairs,1) & bf10(pair) > 10;
-        %              pair_color = [0 1 0];
-        %         else
-        %             pair_color = [1 1 1];
-        %         end;
-        
-        if IC_pp_pvals(pair) < 0.05/size(pairs,1);
+        if IC_pp_pvals(pair) < 0.05/size(pairs,1);  %multiple comparison corrected
+            
             plot([line_pair_order(pair,1)+1 line_pair_order(pair,2)+1],...
-                [line_y_values(pair) line_y_values(pair)],'LineWidth',4,'Color',[0 0 0]);
-        end;
-        
-        if bf10(pair) < (1/10);
-            plot([line_pair_order(pair,1)+1 line_pair_order(pair,2)+1],...
-                [line_y_values(pair) line_y_values(pair)],'LineWidth',1,'Color',[1 0 1]);
-        end;
-        if bf10(pair) > 10;
-            plot([line_pair_order(pair,1)+1 line_pair_order(pair,2)+1],...
-                [line_y_values(pair) line_y_values(pair)],'LineWidth',1,'Color',[0 1 0]);
-        end;
+                [line_y_values(pair) line_y_values(pair)],'LineWidth',2,'Color',[0 0 0]);
+            
+        end;    %Do line on plot?;
         
     end;    %loop through ttest pairs
     
@@ -1354,7 +1189,7 @@ end;    %Only compute ttests if there is at least one pair of models
 %%%%%%%%%%%%%%%%%%%%%%
 %Plot of numbers of winning subs for each model
 
-subplot(2,3,3); hold on; box off;
+subplot(2,3,6); hold on; box off;
 
 %winning models
 [a pps_indices] = min(IC_pps_all_models');
@@ -1364,17 +1199,11 @@ for model = 1:Generate_params.num_models;
     bar(model,numel(find(pps_indices==model)), ...
         'FaceColor', plot_cmap(Generate_params.model(model).identifier+1,:),'FaceAlpha',f_a,'EdgeColor',[0 0 0] );
     
-    %get frequency of most common model so I can set the Y axis limits (and
-    %thereby correctly judge distance of x axis labels from axis)
-    max_freq = max(histc(pps_indices,Generate_params.do_models_identifiers));
-    
     set(gca ...
         ,'XTick',[] ...
         ,'fontSize',graph_font ...
-        ,'FontName','Arial'...
-        ,'XLim',[0 Generate_params.num_models+1] ...
-        ,'YLim',[0 max_freq] ...
-        ,'LineWidth',2 ...
+        ,'FontName','Arial',...
+        'XLim',[0 Generate_params.num_models+1] ...
         );
     ylabel('Frequency');
     
@@ -1389,18 +1218,6 @@ for model = 1:Generate_params.num_models;
     
 end;    %models
 
-
-%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%Write out the data matrices used for plots so they can be analysed statistically in JASP
-%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-fprintf(' ');
-
-%big matrix
-%cols 1-6: samples participants & 5 models; cols 7-11: ll 5 models; cols 12-16: BIC 5 models
-out = [samples_accum ll_accum IC_pps_all_models];
-
-writematrix(out,'C:\matlab_files\fiance\parameter_recovery\beta_fixed_code\Model_fitting_imageTasks\outputs\models_imageTask_face_1.csv');
 
 %%%%%%%%%%%%%%%%%%%%%%
 
@@ -1419,8 +1236,10 @@ num_cols = ceil(numel(Generate_params.do_models_identifiers)/num_rows);
 
 for identifier = 1:numel(Generate_params.do_models_identifiers);
     
-    %     subplot(num_rows, num_cols, identifier); hold on; box off;
-    subplot( 1, numel(Generate_params.do_models_identifiers), identifier); hold on; box off;
+    subplot(num_rows, num_cols, identifier); hold on; box off;
+    
+    %Put a diagonal slope = 1 on the plot against which points can be compared
+    plot([0 8],[0 8],'Color',[0 0 0]);
     
     scatter( ...
         nanmean(Generate_params.num_samples)' ...
@@ -1430,45 +1249,24 @@ for identifier = 1:numel(Generate_params.do_models_identifiers);
         );
     
     %regression line
-    [b,bint,r,rint,stats] = regress( ...
+    b = regress( ...
         nanmean(Generate_params.model(identifier).num_samples_est)' ...
         , [ones(Generate_params.num_subs,1) nanmean(Generate_params.num_samples)'] ...
         );
-    %     x_vals = [min(nanmean(Generate_params.num_samples)') max(nanmean(Generate_params.num_samples)')];
-    x_vals = [0 Generate_params.seq_length];
-    
+    x_vals = [min(nanmean(Generate_params.num_samples)') max(nanmean(Generate_params.num_samples)')];
     y_hat = b(1) + b(2)*x_vals;
     
-    %Put Rsquared on plot
-    text( 0.5, Generate_params.seq_length + .5 ...
-        , sprintf('R squared = %0.2f',stats(1)) ...
-        , 'Fontname','Arial' ...
-        , 'Fontsize',graph_font ...
-        , 'FontWeight','normal' ...
-        );
-    
-    %Plot regression line
     plot( x_vals, y_hat ...
         , 'Color', plot_cmap(Generate_params.do_models_identifiers(identifier)+1,:) ...
-        );
-    
-    %Plot a diagonal of inequality too
-    plot( ...
-        [0 Generate_params.seq_length] ...
-        , [0 Generate_params.seq_length] ...
-        , 'Color', [.5 .5 .5] ...
         );
     
     set(gca ...
         , 'Fontname','Arial' ...
         , 'Fontsize',graph_font ...
         , 'FontWeight','normal' ...
-        , 'YTick',[0:2:Generate_params.seq_length] ...
-        , 'XTick',[0:2:Generate_params.seq_length] ...
-        , 'LineWidth',2 ...
         );
     
-    ylim([0 Generate_params.seq_length+1]);
+    ylim([0 Generate_params.seq_length]);
     xlim([0 Generate_params.seq_length]);
     ylabel('Predicted sampling');
     xlabel('Participant sampling');
@@ -1490,7 +1288,7 @@ end;
 
 %     if Generate_params.analyze_value_positions == 1;
 %             analyze_value_position_functions(raw_seqs_subs,all_choice_trial,plot_cmap,binEdges_psi,model_strs,param_to_fit,two_params);
-nbins_psi = 9;
+nbins_psi = 4;
 binEdges_psi(1:Generate_params.num_subs,:) = ...
     repmat(...
     linspace(...
@@ -1512,6 +1310,8 @@ analyze_value_position_functions(...
     );
 
 %     end;    %make threshold by serial position plot
+
+
 
 
 
@@ -1544,6 +1344,15 @@ for sub = 1:Generate_params.num_subs;
             analyzeSecretaryNick3_test(prior,list,0,0,0);
         
         samples(sequence,sub) = find(difVal<0,1,'first');
+        
+%         %Input to model
+%         sub_data = struct( ...
+%             'sampleSeries',log(squeeze(Generate_params.seq_vals(sequence,:,sub))) ...
+%             ,'prior',prior ...
+%             );
+%         
+%         samples(sequence,sub)  = ...
+%             cbm_IO_samplessubjectiveVals(sub_data);
         
         %rank of chosen option
         dataList = tiedrank(squeeze(Generate_params.seq_vals(sequence,:,sub))');    %ranks of sequence values

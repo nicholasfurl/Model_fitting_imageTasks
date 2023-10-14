@@ -49,7 +49,11 @@ comment = sprintf('foodsOpendaySubsLog%d',log_or_not);     %The filename will al
 outpath = 'C:\matlab_files\fiance\parameter_recovery\outputs';
 %Unfortunately still needs to be typed in manually
 % filename_for_plots = 'C:\matlab_files\fiance\parameter_recovery\outputs\out_new_ll1_facesOpendaySubsLog0_20212707.mat';
-filename_for_plots = 'C:\matlab_files\fiance\parameter_recovery\outputs\out_new_ll1_foodsOpendaySubsLog0_20210208.mat';
+% filename_for_plots = 'C:\matlab_files\fiance\parameter_recovery\outputs\out_new_ll1_foodsOpendaySubsLog0_20210208.mat';
+% filename_for_plots = 'C:\matlab_files\fiance\parameter_recovery\outputs\out_new_ll1_HybridPrior2SubsLog0vals0_20223003.mat';
+filename_for_plots = 'C:\matlab_files\fiance\parameter_recovery\outputs\out_new_ll1_HybridPrior2SubsLog0vals0_20211208.mat';  
+
+
 
 %These correspond to identifiers (not configured implementations like in v2) in the v3_sweep version
 model_names = {'Cut off' 'Cs' 'IO' 'BV' 'BR' 'BPM' 'Opt' 'BPV' }; %IO is a placeholder, don't implement
@@ -58,6 +62,9 @@ num_model_identifiers = size(model_names,2);
 % subjects = 1;    %big trust sub nums
 IC = 2; %1 if AIC, 2 if BIC
 analyze_value_positions = 1;    %Create plots with psychometric curves, their thresholds (model fits) and their correlations (nbins_psi hardwired at function call)
+do_io = 1;  %If a 1, will add io performance as a final model field when make_est_model_data is switched to 1.
+
+
 
 if check_params == 1;
     
@@ -320,6 +327,15 @@ if make_est_model_data == 1;
         
         %should create Generate_params in workspace
         load(filename_for_plots,'Generate_params');
+        Generate_params.do_io = do_io;
+        
+    end;
+    
+    
+    %Run ideal observer if configured to do so
+    if Generate_params.do_io == 1;
+        
+        Generate_params = run_io(Generate_params);
         
     end;
     
@@ -565,9 +581,6 @@ for num_subs_found = Generate_params.num_subs_to_run;
             %             num_samples(sequence,this_sub) = find(difVal<0,1,'first');  %assign output num samples for Bruno model
             
         end;    %Cutoff or other model?
-
-            cprob(end,2) = Inf; %ensure stop choice on final sample.
-        
         
         choiceValues = [choiceCont; choiceStop]';
         
@@ -578,6 +591,8 @@ for num_subs_found = Generate_params.num_subs_to_run;
             %cprob seqpos*choice(draw/stay)
             cprob(drawi, :) = exp(b*choiceValues(drawi, :))./sum(exp(b*choiceValues(drawi, :)));
         end;
+        
+        cprob(end,2) = Inf; %ensure stop choice on final sample.
         
         %Now get samples from uniform distribution
         test = rand(1000,Generate_params.seq_length);
@@ -1329,3 +1344,67 @@ analyze_value_position_functions(...
 
 
 
+
+
+
+
+
+function Generate_params = run_io(Generate_params);
+
+for sub = 1:Generate_params.num_subs;
+    
+    disp(...
+        sprintf('computing performance, ideal observer subject %d' ...
+        , sub ...
+        ) );
+    
+    for sequence = 1:Generate_params.num_seqs;
+        
+        clear sub_data;
+        
+        means = log(Generate_params.ratings(:,sub));
+        means(find(means == -Inf)) = 0;
+        sigs = log(Generate_params.ratings(:,sub));
+        sigs(find(sigs == -Inf)) = 0;
+        vals = log(Generate_params.seq_vals(sequence,:,sub));
+        vals(find(vals == -Inf)) = 0;
+        
+        prior.mu =  mean(means);
+        prior.sig = var(sigs);
+        prior.kappa = 2;
+        prior.nu = 1;
+        
+        list.flip = 0;
+        list.vals = vals;
+        list.length = size(list.vals,2);
+        list.optimize = 0;
+        params = 0; %Cs
+        [choiceStop, choiceCont, difVal] = ...
+            analyzeSecretaryNick3_io_subVals(prior,list,0,0,0);
+        
+        samples(sequence,sub) = find(difVal<0,1,'first');
+        
+%         %Input to model
+%         sub_data = struct( ...
+%             'sampleSeries',log(squeeze(Generate_params.seq_vals(sequence,:,sub))) ...
+%             ,'prior',prior ...
+%             );
+%         
+%         samples(sequence,sub)  = ...
+%             cbm_IO_samplessubjectiveVals(sub_data);
+        
+        %rank of chosen option
+        dataList = tiedrank(squeeze(Generate_params.seq_vals(sequence,:,sub))');    %ranks of sequence values
+        ranks(sequence,sub) = dataList(samples(sequence,sub));
+        
+    end;    %sequence loop
+    
+end;    %sub loop
+
+%add new io field to output struct
+num_existing_models = size(Generate_params.model,2);
+Generate_params.model(num_existing_models+1).name = 'Optimal';
+Generate_params.model(num_existing_models+1).num_samples_est = samples;
+Generate_params.model(num_existing_models+1).ranks_est = ranks;
+
+fprintf('');
