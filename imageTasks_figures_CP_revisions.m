@@ -2,6 +2,9 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 function [] = imageTasks_figures_CP_revisions;
 
+%This is the right one to use. *v2 is for runs w/o BR. I ended up
+%reincluding BR again so back to the original version.
+
 %Based on hybrid_figures_CP_revisions_v4.m, developed to make figures for
 %the communications psychology submission version of the hybrid paper. One
 %major change is that there are no OV models in this paper.
@@ -20,31 +23,57 @@ addpath(genpath('C:\matlab_files\fiance\parameter_recovery\beta_fixed_code\Model
 %Numbers mean where I want a certain model index to appear in new array. So
 %putting a 6 first mean the first model in the input struct will be optimal
 %zero means participants.
-bar_order = [6 0 1:5];
-% bar_order = [6 0 1 2 4 5 3]; 
+%bar_order = [6 0 1:5];
+bar_order = [6 0 1 2 4 5 3]; 
+% bar_order = [5 0 1:4];
 
 
 %Master control switch! Which figure do I want to make! 
 %It's possible paper figure nums may change later but in THIS code:
-figure_num = 2;
+figure_num = 3;
 
 %output file name decoder:
-%study1: baseline pilot, 2: full pilot, 3: baseline, 4: full, 5: ratings phase, 6: squares 7: timing 8:payoff
+%study1: av faces 1, 2: full pilot, 3: baseline, 4: full, 5: ratings phase, 6: squares 7: timing 8:payoff
 %pay1: continuous reward (rewarded by option value of choice), pay2: 5/3/1 ratio for top three ranks (for stars). pay3: monetary ratio for top three ranks
 %val0: objective values, val1: subjective values
 outpath = 'C:\matlab_files\fiance\parameter_recovery\beta_fixed_code\Model_fitting_imageTasks\outputs';
 file_paths = {...
-    [outpath filesep 'out_new_ll1_imageTask_matlab_study01_20231010.mat']
-    [outpath filesep 'out_new_ll1_facesonlineSubsLog0_20212807.mat']
-    [outpath filesep 'out_new_ll1_facesOpendaySubsLog0_20212707.mat']
-    [outpath filesep 'out_new_ll1_imageTask_matlab_study02_20231110.mat']
-    [outpath filesep 'out_new_ll1_imageTask_matlab_study03_20231110.mat']
-    [outpath filesep 'out_new_ll1_bigtrustNoLog_20211007.mat']
-    [outpath filesep 'out_new_ll1_foodsonlineSubsLog0_20213107.mat']
-    [outpath filesep 'out_new_ll1_foodsOpendaySubsLog0_20210208.mat']
-    [outpath filesep 'out_new_ll1_holsOnlineSubsLog0_20210308.mat']
-    [outpath filesep 'out_new_ll1_holsOpendaySubsLog0_20210408.mat']
+    [outpath filesep 'out_imageTask_face_1_newerBVBR_20240502.mat']
+    [outpath filesep 'out_imageTask_face_2_newerBVBR_20240502.mat']
+    [outpath filesep 'out_imageTask_face_3_newerBVBR_20240502.mat']
+    [outpath filesep 'out_imageTask_matchmaker_newerBVBR_20240502.mat']
+    [outpath filesep 'out_imageTask_trust_1_newerBVBR_20240502.mat']
+    [outpath filesep 'out_imageTask_trust_2_newerBVBR_20240602.mat']
+    [outpath filesep 'out_imageTask_food_1_newerBVBR_20240602.mat']
+    [outpath filesep 'out_imageTask_food_2_newerBVBR_20240602.mat']
+    [outpath filesep 'out_imageTask_holiday_1_newerBVBR_20240602.mat']
+    [outpath filesep 'out_imageTask_holiday_2_newerBVBR_20240702.mat']
     };
+
+%7 Feb 2024
+%     [outpath filesep 'out_imageTask_face_1_20240302.mat']
+%     [outpath filesep 'out_imageTask_face_2_20240302.mat']
+%     [outpath filesep 'out_imageTask_face_3_20240402.mat']
+%     [outpath filesep 'out_imageTask_matchmaker_20240402.mat']
+%     [outpath filesep 'out_imageTask_trust_1_20240402.mat']
+%     [outpath filesep 'out_imageTask_trust_2_20240402.mat']
+%     [outpath filesep 'out_imageTask_food_1_20240402.mat']
+%     [outpath filesep 'out_imageTask_food_2_20240402.mat']
+%     [outpath filesep 'out_imageTask_holiday_1_20240402.mat']
+%     [outpath filesep 'out_imageTask_holiday_2_20240502.mat']
+
+% 5 Feb 2024
+%     [outpath filesep 'out_new_ll1_imageTask_matlab_study01_20231510.mat']
+%     [outpath filesep 'out_imageTask_gorilla_study05_20231410.mat']
+%     [outpath filesep 'out_imageTask_gorilla_study08_20231510.mat']
+%     [outpath filesep 'out_new_ll1_imageTask_matlab_study02_20231610.mat']
+%     [outpath filesep 'out_new_ll1_imageTask_matlab_study03_20231810.mat']
+%     [outpath filesep 'out_new_ll1_bigtrustLog_20231910.mat']
+%     [outpath filesep 'out_new_ll1_foodsonlineSubsLog0_20213107.mat']
+%     [outpath filesep 'out_new_ll1_foodsOpendaySubsLog0_20210208.mat']
+%     [outpath filesep 'out_new_ll1_holsOnlineSubsLog0_20210308.mat']
+%     [outpath filesep 'out_new_ll1_holsOpendaySubsLog0_20210408.mat']
+
 %     [outpath filesep 'out_new_ll1_av_20212906.mat']
 
 study_names = {...
@@ -1101,7 +1130,7 @@ for model = 1:numel(bar_order);
                 temp(it_bar_order).name = "CS";    %shorten name and add suffix
                 temp(it_bar_order).skip = 0;    %0 will tell BIC and frequency plotters to plot this as a theoretical model
                 
-            elseif bar_order(model) == 5;   %If Optimism model (only want to slightly modify name so readers don't confuse Opt with optimal)
+            elseif bar_order(model) == 3;   %If Optimism model (only want to slightly modify name so readers don't confuse Opt with optimal)
                 
                 temp(it_bar_order).identifier =  data{dataset}.model(bar_order(model)).identifier + 2; %make two spaces for humans and io
                 temp(it_bar_order).name = "O";    %shorten name and add suffix
