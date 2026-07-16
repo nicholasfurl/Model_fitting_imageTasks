@@ -1,0 +1,9 @@
+Analysis,Subset,ModelOut,Measure,N,MeanValue,SDValue,Tstat,DF,P
+absolute,All participants,Biased-prior,Linear slope vs zero,64,-0.0236016949947054,0.031001546536259,-6.09045615633432,63,7.44412472286247e-08
+absolute,All participants,Biased-prior,Quadratic term vs zero,64,-0.00870400669114561,0.0046523441130415,-14.9670901028089,63,2.03137959842087e-22
+absolute,All participants,Biased-prior,Delta BIC quad-minus-linear vs zero,64,-11.5156808269463,8.42877294655491,-10.9298764125832,63,3.47809490105138e-16
+absolute,All participants,Cost-to-sample,Linear slope vs zero,64,-3.35573976806109,13.8875278295045,-1.93309554256689,63,0.0577215378481347
+absolute,All participants,Cost-to-sample,Quadratic term vs zero,64,-0.00441065957130829,0.003589231954822,-9.83087106506501,63,2.42675320998843e-14
+absolute,All participants,Cost-to-sample,Delta BIC quad-minus-linear vs zero,64,-13.2041603195886,8.50833022101013,-12.4152777117021,63,1.39394745045112e-18
+absolute,Cost-to-sample vs biased-prior best-fit groups,Biased-prior,Linear slope group difference,57,-0.00255694333499365,NaN,-0.300399435946077,55,0.765005058724917
+absolute,Cost-to-sample vs biased-prior best-fit groups,Cost-to-sample,Linear slope group difference,57,-5.1030524451775,NaN,-2.8343822673618,55,0.00640941785005379

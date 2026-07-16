@@ -555,6 +555,14 @@ else;
 
 end;
 
+%added 28/2/2025
+%normalise between zero and 1 (ensures small action values that behave well in softmax)
+if all(payoff == payoff(1));
+    payoff = payoff/100;
+else;
+    payoff = (payoff - min(payoff))/(max(payoff)-min(payoff));
+end;
+
 maxPayRank = numel(payoff);
 payoff = [payoff zeros(1, 20)];
 

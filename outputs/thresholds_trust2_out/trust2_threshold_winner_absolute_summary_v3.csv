@@ -1,0 +1,19 @@
+Subset,Measure,N,MeanValue,SDValue,Tstat,DF,P,NQuadraticBetter,NLinearBetter
+Cost-to-sample,Standardised linear slope vs zero,20,-0.899830530683007,0.237841246219177,-16.9195399605561,19,6.50266450252785e-13,NaN,NaN
+Cost-to-sample,Raw linear slope vs zero,20,-5.24598555237066,11.0335151297559,-2.126317889835,19,0.0468038865515655,NaN,NaN
+Cost-to-sample,Linear R2,20,0.863435019431874,0.26555928994378,NaN,NaN,NaN,NaN,NaN
+Cost-to-sample,Quadratic R2,20,0.954909744073633,0.123226535131137,NaN,NaN,NaN,NaN,NaN
+Cost-to-sample,Quadratic R2 advantage vs zero,20,0.091474724641759,0.183154827055838,2.23356059799275,19,0.0377319252029368,NaN,NaN
+Cost-to-sample,Quadratic BIC advantage vs zero,20,10.4504109089205,9.60441070681809,4.86606204138336,19,0.000107296901934452,19,1
+Biased-prior,Standardised linear slope vs zero,37,-0.431341965813252,0.656356086782043,-3.99745016498231,36,0.000303736728404991,NaN,NaN
+Biased-prior,Raw linear slope vs zero,37,-0.0265474641982533,0.0299554842845248,-5.39072975638692,36,4.53287779796789e-06,NaN,NaN
+Biased-prior,Linear R2,37,0.605215871352996,0.301783344902941,NaN,NaN,NaN,NaN,NaN
+Biased-prior,Quadratic R2,37,0.91213188394341,0.104088527501658,NaN,NaN,NaN,NaN,NaN
+Biased-prior,Quadratic R2 advantage vs zero,37,0.306916012590415,0.225613533712243,8.27475723914075,36,7.55385533393484e-10,NaN,NaN
+Biased-prior,Quadratic BIC advantage vs zero,37,11.9579708993293,8.02100583324984,9.06837606616799,36,7.920088946446e-11,35,2
+Cost-to-sample minus biased-prior winners,Standardised linear slope group difference,57,-0.468488564869755,NaN,-3.07409860486964,55,0.00328354277228046,NaN,NaN
+Cost-to-sample minus biased-prior winners,Raw linear slope group difference,57,-5.2194380881724,NaN,-2.89994525374502,55,0.00535458380972586,NaN,NaN
+Cost-to-sample minus biased-prior winners,Quadratic BIC advantage group difference,57,-1.50755999040874,NaN,-0.631543246831356,55,0.530301591129836,NaN,NaN
+Cost-to-sample minus biased-prior winners,Quadratic R2 advantage group difference,57,-0.215441287948656,NaN,-3.66316078247647,55,0.000561164533160268,NaN,NaN
+Cost-to-sample minus biased-prior winners,Linear R2 group difference,57,0.258219148078878,NaN,3.2106687607049,55,0.00221284420810293,NaN,NaN
+Cost-to-sample minus biased-prior winners,Quadratic R2 group difference,57,0.0427778601302228,NaN,1.38767547563279,55,0.170832591494897,NaN,NaN

@@ -1,0 +1,9 @@
+Analysis,Subset,ModelOut,Measure,N,MeanValue,SDValue,Tstat,DF,P
+stop_aligned_participant,All participants,Biased-prior,Linear slope vs zero,63,-0.00438890327229832,0.0184338935001929,-1.88977113055863,62,0.0634660038896366
+stop_aligned_participant,All participants,Biased-prior,Quadratic term vs zero,62,9.57121418086282e-05,0.00610414459375605,0.123463352917716,61,0.90214610272438
+stop_aligned_participant,All participants,Biased-prior,Delta BIC quad-minus-linear vs zero,62,-4.87402122739739,11.2527910982325,-3.41053887765285,61,0.00115522956708028
+stop_aligned_participant,All participants,Cost-to-sample,Linear slope vs zero,63,-1.49697572176866,5.8483738748806,-2.03165472825495,62,0.0464800682018299
+stop_aligned_participant,All participants,Cost-to-sample,Quadratic term vs zero,62,0.194303208158447,1.30542631887078,1.17198877398826,61,0.245758676402423
+stop_aligned_participant,All participants,Cost-to-sample,Delta BIC quad-minus-linear vs zero,62,-3.69267014736669,8.74190076858761,-3.32606312816696,61,0.00149514301308973
+stop_aligned_participant,Cost-to-sample vs biased-prior best-fit groups,Biased-prior,Linear slope group difference,56,0.00364099913150663,NaN,0.662290539188645,54,0.510601827591801
+stop_aligned_participant,Cost-to-sample vs biased-prior best-fit groups,Cost-to-sample,Linear slope group difference,56,-2.50960385581491,NaN,-2.98754141225365,54,0.0042237993628851

@@ -1,0 +1,25 @@
+BestFitModel,Source,Measure,N,MeanValue,SDValue,Tstat,DF,P,NLTMBetter,NITMBetter
+Cost-to-sample,Participants,N observations,19,150.263157894737,72.1301617488699,NaN,NaN,NaN,NaN,NaN
+Cost-to-sample,Participants,LTM slope vs zero,19,0.28773791850426,1.60265558973306,0.782588921175334,18,0.444042978034579,NaN,NaN
+Cost-to-sample,Participants,Linear advantage BIC vs zero,19,16.3392493837129,5.65299482099424,12.598832854474,18,2.29517371650881e-10,19,0
+Cost-to-sample,Participants,LTM BIC,19,117.806362109949,55.9017092635431,NaN,NaN,NaN,NaN,NaN
+Cost-to-sample,Participants,ITM BIC,19,134.145611493662,55.7099396344495,NaN,NaN,NaN,NaN,NaN
+Cost-to-sample,Winning model,N observations,20,280,0,NaN,NaN,NaN,NaN,NaN
+Cost-to-sample,Winning model,LTM slope vs zero,20,-0.240584601951673,0.743593588073033,-1.44692889484903,19,0.164214594047833,NaN,NaN
+Cost-to-sample,Winning model,Linear advantage BIC vs zero,20,27.7249137993186,1.26426377419999,98.0725592091382,19,3.61288052744488e-27,20,0
+Cost-to-sample,Winning model,LTM BIC,20,258.131463429072,112.392560610607,NaN,NaN,NaN,NaN,NaN
+Cost-to-sample,Winning model,ITM BIC,20,285.856377228391,112.535674012211,NaN,NaN,NaN,NaN,NaN
+Biased-prior,Participants,N observations,37,159.918918918919,61.7424661973599,NaN,NaN,NaN,NaN,NaN
+Biased-prior,Participants,LTM slope vs zero,37,0.425932885832988,1.08656144098936,2.38444739582108,36,0.0224960039601246,NaN,NaN
+Biased-prior,Participants,Linear advantage BIC vs zero,37,18.2308238262583,5.46432698222839,20.2941318166888,36,2.69776252957638e-21,37,0
+Biased-prior,Participants,LTM BIC,37,117.560770710387,34.2756429976314,NaN,NaN,NaN,NaN,NaN
+Biased-prior,Participants,ITM BIC,37,135.791594536645,36.9675748944229,NaN,NaN,NaN,NaN,NaN
+Biased-prior,Winning model,N observations,37,280,0,NaN,NaN,NaN,NaN,NaN
+Biased-prior,Winning model,LTM slope vs zero,37,-0.308733223120282,0.221823141630492,-8.46598270879464,36,4.35621701274887e-10,NaN,NaN
+Biased-prior,Winning model,Linear advantage BIC vs zero,37,27.1906528414794,2.61815233026941,63.172139514693,36,1.76579826240163e-38,37,0
+Biased-prior,Winning model,LTM BIC,37,270.117298329078,75.1489652426383,NaN,NaN,NaN,NaN,NaN
+Biased-prior,Winning model,ITM BIC,37,297.307951170558,75.372508241862,NaN,NaN,NaN,NaN,NaN
+Cost-to-sample minus biased-prior winners,Participants,LTM slope group difference,56,-0.138194967328728,NaN,-0.381965951950955,54,0.703985689961761,NaN,NaN
+Cost-to-sample minus biased-prior winners,Participants,Linear advantage BIC group difference,56,-1.89157444254542,NaN,-1.21239576876239,54,0.230638711818138,NaN,NaN
+Cost-to-sample minus biased-prior winners,Winning model,LTM slope group difference,57,0.0681486211686095,NaN,0.519719529821188,55,0.605344573801156,NaN,NaN
+Cost-to-sample minus biased-prior winners,Winning model,Linear advantage BIC group difference,57,0.534260957839177,NaN,0.857559952619309,55,0.39485702141148,NaN,NaN

@@ -1,0 +1,225 @@
+BestFitModel,Source,Position,ValueBin,Success,Trials,PropStop
+Cost-to-sample,Participants,1,1,38,107,0.355140186915888
+Cost-to-sample,Participants,1,2,43,100,0.43
+Cost-to-sample,Participants,1,3,27,92,0.293478260869565
+Cost-to-sample,Participants,1,4,41,114,0.359649122807018
+Cost-to-sample,Participants,1,5,28,87,0.32183908045977
+Cost-to-sample,Participants,1,6,48,103,0.466019417475728
+Cost-to-sample,Participants,1,7,41,90,0.455555555555556
+Cost-to-sample,Participants,1,8,51,107,0.476635514018692
+Cost-to-sample,Participants,2,1,0,64,0
+Cost-to-sample,Participants,2,2,3,65,0.0461538461538462
+Cost-to-sample,Participants,2,3,1,61,0.0163934426229508
+Cost-to-sample,Participants,2,4,5,71,0.0704225352112676
+Cost-to-sample,Participants,2,5,4,59,0.0677966101694915
+Cost-to-sample,Participants,2,6,3,50,0.06
+Cost-to-sample,Participants,2,7,6,49,0.122448979591837
+Cost-to-sample,Participants,2,8,8,64,0.125
+Cost-to-sample,Participants,3,1,3,50,0.06
+Cost-to-sample,Participants,3,2,6,56,0.107142857142857
+Cost-to-sample,Participants,3,3,7,62,0.112903225806452
+Cost-to-sample,Participants,3,4,9,54,0.166666666666667
+Cost-to-sample,Participants,3,5,7,58,0.120689655172414
+Cost-to-sample,Participants,3,6,13,76,0.171052631578947
+Cost-to-sample,Participants,3,7,11,49,0.224489795918367
+Cost-to-sample,Participants,3,8,14,48,0.291666666666667
+Cost-to-sample,Participants,4,1,8,53,0.150943396226415
+Cost-to-sample,Participants,4,2,9,41,0.219512195121951
+Cost-to-sample,Participants,4,3,5,50,0.1
+Cost-to-sample,Participants,4,4,3,48,0.0625
+Cost-to-sample,Participants,4,5,9,51,0.176470588235294
+Cost-to-sample,Participants,4,6,8,36,0.222222222222222
+Cost-to-sample,Participants,4,7,11,49,0.224489795918367
+Cost-to-sample,Participants,4,8,10,55,0.181818181818182
+Cost-to-sample,Participants,5,1,5,40,0.125
+Cost-to-sample,Participants,5,2,5,39,0.128205128205128
+Cost-to-sample,Participants,5,3,4,43,0.0930232558139535
+Cost-to-sample,Participants,5,4,6,36,0.166666666666667
+Cost-to-sample,Participants,5,5,8,39,0.205128205128205
+Cost-to-sample,Participants,5,6,7,35,0.2
+Cost-to-sample,Participants,5,7,12,40,0.3
+Cost-to-sample,Participants,5,8,19,48,0.395833333333333
+Cost-to-sample,Participants,6,1,2,36,0.0555555555555556
+Cost-to-sample,Participants,6,2,1,34,0.0294117647058824
+Cost-to-sample,Participants,6,3,7,27,0.259259259259259
+Cost-to-sample,Participants,6,4,4,29,0.137931034482759
+Cost-to-sample,Participants,6,5,6,31,0.193548387096774
+Cost-to-sample,Participants,6,6,8,37,0.216216216216216
+Cost-to-sample,Participants,6,7,13,32,0.40625
+Cost-to-sample,Participants,6,8,11,28,0.392857142857143
+Cost-to-sample,Participants,7,1,3,25,0.12
+Cost-to-sample,Participants,7,2,5,30,0.166666666666667
+Cost-to-sample,Participants,7,3,1,23,0.0434782608695652
+Cost-to-sample,Participants,7,4,7,28,0.25
+Cost-to-sample,Participants,7,5,6,24,0.25
+Cost-to-sample,Participants,7,6,5,24,0.208333333333333
+Cost-to-sample,Participants,7,7,7,29,0.241379310344828
+Cost-to-sample,Participants,7,8,5,19,0.263157894736842
+Cost-to-sample,Winning model,1,1,31.4272118474486,107,0.293712260256529
+Cost-to-sample,Winning model,1,2,33.4097610823526,100,0.334097610823526
+Cost-to-sample,Winning model,1,3,24.6816164600212,92,0.268278439782839
+Cost-to-sample,Winning model,1,4,35.7932424612037,114,0.31397581106319
+Cost-to-sample,Winning model,1,5,25.6593188131873,87,0.294934699002153
+Cost-to-sample,Winning model,1,6,35.9779745769301,103,0.349300724047865
+Cost-to-sample,Winning model,1,7,25.9066712828957,90,0.287851903143286
+Cost-to-sample,Winning model,1,8,37.6632771651248,107,0.351993244533877
+Cost-to-sample,Winning model,2,1,6.00300740078688,64,0.0937969906372951
+Cost-to-sample,Winning model,2,2,8.08582115189711,65,0.124397248490725
+Cost-to-sample,Winning model,2,3,4.77598570887556,61,0.0782948476864847
+Cost-to-sample,Winning model,2,4,8.83773875897553,71,0.124475193788388
+Cost-to-sample,Winning model,2,5,10.6780262529228,59,0.180983495812251
+Cost-to-sample,Winning model,2,6,7.79409050089243,50,0.155881810017849
+Cost-to-sample,Winning model,2,7,9.16139512646514,49,0.18696724747888
+Cost-to-sample,Winning model,2,8,10.7056860572326,64,0.167276344644259
+Cost-to-sample,Winning model,3,1,4.01820777739952,50,0.0803641555479905
+Cost-to-sample,Winning model,3,2,5.66994627510806,56,0.10124904062693
+Cost-to-sample,Winning model,3,3,7.49173936932052,62,0.120834505956783
+Cost-to-sample,Winning model,3,4,7.94155310058356,54,0.147065798158955
+Cost-to-sample,Winning model,3,5,8.10176688816261,58,0.139685636002804
+Cost-to-sample,Winning model,3,6,15.3202242763642,76,0.201581898373213
+Cost-to-sample,Winning model,3,7,11.4012297907267,49,0.232678158994422
+Cost-to-sample,Winning model,3,8,14.6683259211598,48,0.305590123357496
+Cost-to-sample,Winning model,4,1,6.60432834200361,53,0.124609968717049
+Cost-to-sample,Winning model,4,2,5.51570838656005,41,0.134529472842928
+Cost-to-sample,Winning model,4,3,6.44240771719513,50,0.128848154343903
+Cost-to-sample,Winning model,4,4,7.13294712439785,48,0.148603065091622
+Cost-to-sample,Winning model,4,5,10.1898699694357,51,0.199801371949719
+Cost-to-sample,Winning model,4,6,7.93266647694463,36,0.220351846581795
+Cost-to-sample,Winning model,4,7,14.4868067505995,49,0.295649117359173
+Cost-to-sample,Winning model,4,8,14.6031230260201,55,0.265511327745821
+Cost-to-sample,Winning model,5,1,4.25572598138295,40,0.106393149534574
+Cost-to-sample,Winning model,5,2,5.08494524779613,39,0.130383211481952
+Cost-to-sample,Winning model,5,3,7.74571040373112,43,0.18013280008677
+Cost-to-sample,Winning model,5,4,7.86366798055439,36,0.218435221682066
+Cost-to-sample,Winning model,5,5,10.1577847570054,39,0.260456019410394
+Cost-to-sample,Winning model,5,6,8.95808507464436,35,0.255945287846982
+Cost-to-sample,Winning model,5,7,12.706004863296,40,0.3176501215824
+Cost-to-sample,Winning model,5,8,18.0234138483147,48,0.375487788506557
+Cost-to-sample,Winning model,6,1,3.32065760241368,36,0.0922404889559355
+Cost-to-sample,Winning model,6,2,4.9519633019612,34,0.145645979469447
+Cost-to-sample,Winning model,6,3,6.63374581754302,27,0.245694289538631
+Cost-to-sample,Winning model,6,4,8.58514246783047,29,0.29603939544243
+Cost-to-sample,Winning model,6,5,9.35608454668503,31,0.301809178925323
+Cost-to-sample,Winning model,6,6,12.3090044516185,37,0.33267579598969
+Cost-to-sample,Winning model,6,7,13.5731790401111,32,0.424161845003471
+Cost-to-sample,Winning model,6,8,10.3612360183009,28,0.370044143510746
+Cost-to-sample,Winning model,7,1,5.94920489093156,25,0.237968195637262
+Cost-to-sample,Winning model,7,2,6.3792224349397,30,0.212640747831323
+Cost-to-sample,Winning model,7,3,5.94475883271761,23,0.258467775335548
+Cost-to-sample,Winning model,7,4,8.30908288989378,28,0.296752960353349
+Cost-to-sample,Winning model,7,5,10.238546040384,24,0.426606085015999
+Cost-to-sample,Winning model,7,6,10.8747664640464,24,0.453115269335265
+Cost-to-sample,Winning model,7,7,11.8266412059596,29,0.407815213998606
+Cost-to-sample,Winning model,7,8,9.29645245049612,19,0.489286971078743
+Biased-prior,Participants,1,1,56,182,0.307692307692308
+Biased-prior,Participants,1,2,40,169,0.236686390532544
+Biased-prior,Participants,1,3,40,176,0.227272727272727
+Biased-prior,Participants,1,4,47,171,0.274853801169591
+Biased-prior,Participants,1,5,42,176,0.238636363636364
+Biased-prior,Participants,1,6,58,206,0.281553398058252
+Biased-prior,Participants,1,7,73,190,0.384210526315789
+Biased-prior,Participants,1,8,101,210,0.480952380952381
+Biased-prior,Participants,2,1,5,147,0.0340136054421769
+Biased-prior,Participants,2,2,11,142,0.0774647887323944
+Biased-prior,Participants,2,3,8,117,0.0683760683760684
+Biased-prior,Participants,2,4,8,142,0.0563380281690141
+Biased-prior,Participants,2,5,8,117,0.0683760683760684
+Biased-prior,Participants,2,6,15,128,0.1171875
+Biased-prior,Participants,2,7,18,112,0.160714285714286
+Biased-prior,Participants,2,8,46,118,0.389830508474576
+Biased-prior,Participants,3,1,3,104,0.0288461538461538
+Biased-prior,Participants,3,2,6,125,0.048
+Biased-prior,Participants,3,3,7,118,0.0593220338983051
+Biased-prior,Participants,3,4,8,127,0.062992125984252
+Biased-prior,Participants,3,5,7,106,0.0660377358490566
+Biased-prior,Participants,3,6,14,103,0.135922330097087
+Biased-prior,Participants,3,7,23,118,0.194915254237288
+Biased-prior,Participants,3,8,49,103,0.475728155339806
+Biased-prior,Participants,4,1,3,104,0.0288461538461538
+Biased-prior,Participants,4,2,5,103,0.0485436893203883
+Biased-prior,Participants,4,3,9,111,0.0810810810810811
+Biased-prior,Participants,4,4,8,88,0.0909090909090909
+Biased-prior,Participants,4,5,11,100,0.11
+Biased-prior,Participants,4,6,12,98,0.122448979591837
+Biased-prior,Participants,4,7,29,100,0.29
+Biased-prior,Participants,4,8,37,83,0.44578313253012
+Biased-prior,Participants,5,1,2,100,0.02
+Biased-prior,Participants,5,2,6,80,0.075
+Biased-prior,Participants,5,3,4,85,0.0470588235294118
+Biased-prior,Participants,5,4,6,83,0.072289156626506
+Biased-prior,Participants,5,5,5,77,0.0649350649350649
+Biased-prior,Participants,5,6,16,75,0.213333333333333
+Biased-prior,Participants,5,7,24,81,0.296296296296296
+Biased-prior,Participants,5,8,41,92,0.445652173913043
+Biased-prior,Participants,6,1,4,94,0.0425531914893617
+Biased-prior,Participants,6,2,2,73,0.0273972602739726
+Biased-prior,Participants,6,3,6,78,0.0769230769230769
+Biased-prior,Participants,6,4,6,70,0.0857142857142857
+Biased-prior,Participants,6,5,5,76,0.0657894736842105
+Biased-prior,Participants,6,6,5,54,0.0925925925925926
+Biased-prior,Participants,6,7,23,59,0.389830508474576
+Biased-prior,Participants,6,8,37,65,0.569230769230769
+Biased-prior,Participants,7,1,2,77,0.025974025974026
+Biased-prior,Participants,7,2,4,48,0.0833333333333333
+Biased-prior,Participants,7,3,3,49,0.0612244897959184
+Biased-prior,Participants,7,4,12,61,0.19672131147541
+Biased-prior,Participants,7,5,17,62,0.274193548387097
+Biased-prior,Participants,7,6,18,70,0.257142857142857
+Biased-prior,Participants,7,7,18,59,0.305084745762712
+Biased-prior,Participants,7,8,35,55,0.636363636363636
+Biased-prior,Winning model,1,1,38.0144112098405,182,0.20887039126286
+Biased-prior,Winning model,1,2,33.8030250314646,169,0.200017899594465
+Biased-prior,Winning model,1,3,35.4347872444743,176,0.201334018434513
+Biased-prior,Winning model,1,4,38.0080410293344,171,0.222269245785581
+Biased-prior,Winning model,1,5,40.2424722092545,176,0.228650410279855
+Biased-prior,Winning model,1,6,45.2921912771091,206,0.219865006199559
+Biased-prior,Winning model,1,7,50.7298259408322,190,0.266999083899117
+Biased-prior,Winning model,1,8,59.0412208528191,210,0.28114867072771
+Biased-prior,Winning model,2,1,12.3336774117884,147,0.0839025674271317
+Biased-prior,Winning model,2,2,15.433095827726,142,0.10868377343469
+Biased-prior,Winning model,2,3,12.796654971893,117,0.109373119417889
+Biased-prior,Winning model,2,4,16.993858053413,142,0.119675056714176
+Biased-prior,Winning model,2,5,16.6597950201563,117,0.142391410428686
+Biased-prior,Winning model,2,6,20.6526357574028,128,0.16134871685471
+Biased-prior,Winning model,2,7,23.7282090789803,112,0.211859009633752
+Biased-prior,Winning model,2,8,29.3956265477049,118,0.249115479217838
+Biased-prior,Winning model,3,1,8.3257151616286,104,0.080054953477198
+Biased-prior,Winning model,3,2,9.88660484670704,125,0.0790928387736563
+Biased-prior,Winning model,3,3,13.5064438040813,118,0.114461388170181
+Biased-prior,Winning model,3,4,17.7944388623276,127,0.140113691829351
+Biased-prior,Winning model,3,5,17.0420701277928,106,0.160774246488611
+Biased-prior,Winning model,3,6,20.1699012902865,103,0.195824284371714
+Biased-prior,Winning model,3,7,28.0297181346529,118,0.237539984191974
+Biased-prior,Winning model,3,8,32.1114435719053,103,0.31176158807675
+Biased-prior,Winning model,4,1,6.2182594478005,104,0.059790956228851
+Biased-prior,Winning model,4,2,8.66646560000531,103,0.0841404427184982
+Biased-prior,Winning model,4,3,10.9368935404263,111,0.0985305724362734
+Biased-prior,Winning model,4,4,10.9106456545554,88,0.123984609710857
+Biased-prior,Winning model,4,5,18.3462406945124,100,0.183462406945125
+Biased-prior,Winning model,4,6,25.3702299122028,98,0.258879897063294
+Biased-prior,Winning model,4,7,30.5554017733078,100,0.305554017733078
+Biased-prior,Winning model,4,8,34.7647942896429,83,0.41885294324871
+Biased-prior,Winning model,5,1,6.00583200056389,100,0.0600583200056389
+Biased-prior,Winning model,5,2,5.99270723866202,80,0.0749088404832752
+Biased-prior,Winning model,5,3,11.5247236179719,85,0.135584983740846
+Biased-prior,Winning model,5,4,17.0988266128729,83,0.206009959191239
+Biased-prior,Winning model,5,5,16.3201935215983,77,0.211950565215562
+Biased-prior,Winning model,5,6,21.7655782886836,75,0.290207710515781
+Biased-prior,Winning model,5,7,30.8972028800197,81,0.381446949136046
+Biased-prior,Winning model,5,8,43.6865108435472,92,0.474853378734208
+Biased-prior,Winning model,6,1,5.99186181390434,94,0.0637432107862164
+Biased-prior,Winning model,6,2,6.39436998266263,73,0.0875941093515429
+Biased-prior,Winning model,6,3,11.5699864119574,78,0.148333159127658
+Biased-prior,Winning model,6,4,13.9413093882076,70,0.19916156268868
+Biased-prior,Winning model,6,5,22.2109569393454,76,0.292249433412439
+Biased-prior,Winning model,6,6,20.3985785442529,54,0.377751454523202
+Biased-prior,Winning model,6,7,28.1806316193828,59,0.477637824057336
+Biased-prior,Winning model,6,8,38.036648916919,65,0.585179214106446
+Biased-prior,Winning model,7,1,6.2397239163763,77,0.0810353755373545
+Biased-prior,Winning model,7,2,5.23100018077002,48,0.108979170432709
+Biased-prior,Winning model,7,3,11.0345409444489,49,0.225194713152018
+Biased-prior,Winning model,7,4,17.9954573452354,61,0.295007497462876
+Biased-prior,Winning model,7,5,24.8189239457102,62,0.40030522493081
+Biased-prior,Winning model,7,6,38.6092447855885,70,0.551560639794122
+Biased-prior,Winning model,7,7,36.0126950177327,59,0.610384661317504
+Biased-prior,Winning model,7,8,41.4962224970709,55,0.754476772674015

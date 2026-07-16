@@ -1,0 +1,9 @@
+Analysis,Subset,ModelOut,Measure,N,MeanValue,SDValue,Tstat,DF,P
+stop_aligned_sequence_mean,All participants,Biased-prior,Linear slope vs zero,63,-0.0110408482989519,0.0294646450362614,-2.97420914043941,62,0.00418107880762852
+stop_aligned_sequence_mean,All participants,Biased-prior,Quadratic term vs zero,62,-0.00704683759306419,0.00556672295341972,-9.9675976618494,61,2.01843381695395e-14
+stop_aligned_sequence_mean,All participants,Biased-prior,Delta BIC quad-minus-linear vs zero,62,-19.5263372125517,14.0183226635069,-10.9678266546462,61,4.62442136004768e-16
+stop_aligned_sequence_mean,All participants,Cost-to-sample,Linear slope vs zero,63,-3.40326571544772,13.9939942731506,-1.93029835930892,62,0.0581470914848493
+stop_aligned_sequence_mean,All participants,Cost-to-sample,Quadratic term vs zero,62,-0.00577669291338057,0.00533625488857893,-8.52390420537426,61,5.54700614813134e-12
+stop_aligned_sequence_mean,All participants,Cost-to-sample,Delta BIC quad-minus-linear vs zero,62,-17.1538690654851,12.7882790484681,-10.561991928662,61,2.11221671502963e-15
+stop_aligned_sequence_mean,Cost-to-sample vs biased-prior best-fit groups,Biased-prior,Linear slope group difference,56,0.00299424958202786,NaN,0.351183514272595,54,0.726817195943578
+stop_aligned_sequence_mean,Cost-to-sample vs biased-prior best-fit groups,Cost-to-sample,Linear slope group difference,56,-5.3831543299379,NaN,-2.9313143448173,54,0.00494012625239207

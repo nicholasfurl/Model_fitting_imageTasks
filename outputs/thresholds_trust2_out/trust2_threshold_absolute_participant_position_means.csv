@@ -1,0 +1,897 @@
+Subject,Model,BestFitModel,Position,MeanThreshold,NObs
+1,Biased-prior,Cut off,1,0.791479658406629,40
+1,Biased-prior,Cut off,2,0.80726187206758,40
+1,Biased-prior,Cut off,3,0.824349275497639,40
+1,Biased-prior,Cut off,4,0.845056680572612,40
+1,Biased-prior,Cut off,5,0.870893083660987,40
+1,Biased-prior,Cut off,6,0.90690817105098,40
+1,Biased-prior,Cut off,7,0.939882564291397,40
+1,Cost-to-sample,Cut off,1,700.480154137548,40
+1,Cost-to-sample,Cut off,2,600.476537602359,40
+1,Cost-to-sample,Cut off,3,500.476890315432,40
+1,Cost-to-sample,Cut off,4,400.473629120005,40
+1,Cost-to-sample,Cut off,5,300.470967188697,40
+1,Cost-to-sample,Cut off,6,200.473373061402,40
+1,Cost-to-sample,Cut off,7,100.468778845296,40
+2,Biased-prior,Biased-prior,1,0.795136198921305,40
+2,Biased-prior,Biased-prior,2,0.798198514753585,40
+2,Biased-prior,Biased-prior,3,0.776260715109134,40
+2,Biased-prior,Biased-prior,4,0.732576786458637,40
+2,Biased-prior,Biased-prior,5,0.688631038070146,40
+2,Biased-prior,Biased-prior,6,0.622383337292523,40
+2,Biased-prior,Biased-prior,7,0.506045372376299,40
+2,Cost-to-sample,Biased-prior,1,0.814879150134979,40
+2,Cost-to-sample,Biased-prior,2,0.811983118153356,40
+2,Cost-to-sample,Biased-prior,3,0.783569103773747,40
+2,Cost-to-sample,Biased-prior,4,0.734222739430647,40
+2,Cost-to-sample,Biased-prior,5,0.686437534241356,40
+2,Cost-to-sample,Biased-prior,6,0.617149148075096,40
+2,Cost-to-sample,Biased-prior,7,0.496662350927617,40
+3,Biased-prior,Biased-prior,1,0.808372397140441,40
+3,Biased-prior,Biased-prior,2,0.822935325372424,40
+3,Biased-prior,Biased-prior,3,0.836098506495052,40
+3,Biased-prior,Biased-prior,4,0.849011796806242,40
+3,Biased-prior,Biased-prior,5,0.860607735360982,40
+3,Biased-prior,Biased-prior,6,0.853836182554053,40
+3,Biased-prior,Biased-prior,7,0.761389364126247,40
+3,Cost-to-sample,Biased-prior,1,1.7426986635652,40
+3,Cost-to-sample,Biased-prior,2,1.5845853282071,40
+3,Cost-to-sample,Biased-prior,3,1.41711628744625,40
+3,Cost-to-sample,Biased-prior,4,1.24732317551528,40
+3,Cost-to-sample,Biased-prior,5,1.07426201896579,40
+3,Cost-to-sample,Biased-prior,6,0.894073122470241,40
+3,Cost-to-sample,Biased-prior,7,0.681400854757381,40
+4,Biased-prior,Biased-prior,1,0.822310889073499,40
+4,Biased-prior,Biased-prior,2,0.836901700058359,40
+4,Biased-prior,Biased-prior,3,0.848853269989248,40
+4,Biased-prior,Biased-prior,4,0.856179696743053,40
+4,Biased-prior,Biased-prior,5,0.848150015450905,40
+4,Biased-prior,Biased-prior,6,0.79824682473656,40
+4,Biased-prior,Biased-prior,7,0.662834457255858,40
+4,Cost-to-sample,Biased-prior,1,2.04373338357778,40
+4,Cost-to-sample,Biased-prior,2,1.84041559512181,40
+4,Cost-to-sample,Biased-prior,3,1.63189145301435,40
+4,Cost-to-sample,Biased-prior,4,1.41880443162943,40
+4,Cost-to-sample,Biased-prior,5,1.20087955649496,40
+4,Cost-to-sample,Biased-prior,6,0.984444123278172,40
+4,Cost-to-sample,Biased-prior,7,0.727259337869391,40
+5,Biased-prior,Biased-prior,1,0.803600907361173,40
+5,Biased-prior,Biased-prior,2,0.819440733359267,40
+5,Biased-prior,Biased-prior,3,0.833612325439921,40
+5,Biased-prior,Biased-prior,4,0.847349459985676,40
+5,Biased-prior,Biased-prior,5,0.854645014290581,40
+5,Biased-prior,Biased-prior,6,0.820348550386685,40
+5,Biased-prior,Biased-prior,7,0.693365731366665,40
+5,Cost-to-sample,Biased-prior,1,1.73906316038096,40
+5,Cost-to-sample,Biased-prior,2,1.58336299346422,40
+5,Cost-to-sample,Biased-prior,3,1.40693417269116,40
+5,Cost-to-sample,Biased-prior,4,1.23632053639173,40
+5,Cost-to-sample,Biased-prior,5,1.06437910008466,40
+5,Cost-to-sample,Biased-prior,6,0.881902944297126,40
+5,Cost-to-sample,Biased-prior,7,0.6617727173739,40
+6,Biased-prior,Cut off,1,0.865228327827573,40
+6,Biased-prior,Cut off,2,0.877145923148859,40
+6,Biased-prior,Cut off,3,0.888744123785047,40
+6,Biased-prior,Cut off,4,0.901280799923181,40
+6,Biased-prior,Cut off,5,0.917137846803186,40
+6,Biased-prior,Cut off,6,0.934577841323321,40
+6,Biased-prior,Cut off,7,0.914358297405156,40
+6,Cost-to-sample,Cut off,1,9.22897457088612,40
+6,Cost-to-sample,Cut off,2,7.98874319919288,40
+6,Cost-to-sample,Cut off,3,6.74829267089398,40
+6,Cost-to-sample,Cut off,4,5.51482732600956,40
+6,Cost-to-sample,Cut off,5,4.2874901828819,40
+6,Cost-to-sample,Cut off,6,3.05596498347536,40
+6,Cost-to-sample,Cut off,7,1.82710007038871,40
+7,Biased-prior,Cost-to-sample,1,0.704160872281851,40
+7,Biased-prior,Cost-to-sample,2,0.724849349216571,40
+7,Biased-prior,Cost-to-sample,3,0.743708850575334,40
+7,Biased-prior,Cost-to-sample,4,0.75948731638465,40
+7,Biased-prior,Cost-to-sample,5,0.758086115190748,40
+7,Biased-prior,Cost-to-sample,6,0.711128729897501,40
+7,Biased-prior,Cost-to-sample,7,0.569647714865909,40
+7,Cost-to-sample,Cost-to-sample,1,232.590913048142,40
+7,Cost-to-sample,Cost-to-sample,2,199.432105072176,40
+7,Cost-to-sample,Cost-to-sample,3,166.259308898939,40
+7,Cost-to-sample,Cost-to-sample,4,133.084699383179,40
+7,Cost-to-sample,Cost-to-sample,5,99.9045340012475,40
+7,Cost-to-sample,Cost-to-sample,6,66.7269199540698,40
+7,Cost-to-sample,Cost-to-sample,7,33.5429805911064,40
+8,Biased-prior,Cost-to-sample,1,0.810121129645587,40
+8,Biased-prior,Cost-to-sample,2,0.824252073074484,40
+8,Biased-prior,Cost-to-sample,3,0.832503637662942,40
+8,Biased-prior,Cost-to-sample,4,0.829273057941157,40
+8,Biased-prior,Cost-to-sample,5,0.801619254541712,40
+8,Biased-prior,Cost-to-sample,6,0.737594935026654,40
+8,Biased-prior,Cost-to-sample,7,0.608377661874668,40
+8,Cost-to-sample,Cost-to-sample,1,1.33494081869157,40
+8,Cost-to-sample,Cost-to-sample,2,1.24422930829111,40
+8,Cost-to-sample,Cost-to-sample,3,1.14474565893202,40
+8,Cost-to-sample,Cost-to-sample,4,1.0349750253801,40
+8,Cost-to-sample,Cost-to-sample,5,0.916916237322907,40
+8,Cost-to-sample,Cost-to-sample,6,0.781844367527369,40
+8,Cost-to-sample,Cost-to-sample,7,0.599353072479037,40
+9,Biased-prior,Biased-prior,1,0.730037079935045,40
+9,Biased-prior,Biased-prior,2,0.748361107305414,40
+9,Biased-prior,Biased-prior,3,0.764819764698932,40
+9,Biased-prior,Biased-prior,4,0.779482211954432,40
+9,Biased-prior,Biased-prior,5,0.777791207044574,40
+9,Biased-prior,Biased-prior,6,0.734033757984512,40
+9,Biased-prior,Biased-prior,7,0.590758237665131,40
+9,Cost-to-sample,Biased-prior,1,1.62645000180948,40
+9,Cost-to-sample,Biased-prior,2,1.47532592705812,40
+9,Cost-to-sample,Biased-prior,3,1.31569183471873,40
+9,Cost-to-sample,Biased-prior,4,1.16177250171863,40
+9,Cost-to-sample,Biased-prior,5,0.976818391382138,40
+9,Cost-to-sample,Biased-prior,6,0.787084585352996,40
+9,Cost-to-sample,Biased-prior,7,0.557123304307909,40
+10,Biased-prior,Cost-to-sample,1,0.767001026317681,40
+10,Biased-prior,Cost-to-sample,2,0.783829569158695,40
+10,Biased-prior,Cost-to-sample,3,0.802046244627753,40
+10,Biased-prior,Cost-to-sample,4,0.821846617163924,40
+10,Biased-prior,Cost-to-sample,5,0.840610601288924,40
+10,Biased-prior,Cost-to-sample,6,0.839498977870109,40
+10,Biased-prior,Cost-to-sample,7,0.74620551012952,40
+10,Cost-to-sample,Cost-to-sample,1,152.991127944584,40
+10,Cost-to-sample,Cost-to-sample,2,131.20617208359,40
+10,Cost-to-sample,Cost-to-sample,3,109.414811695564,40
+10,Cost-to-sample,Cost-to-sample,4,87.6188673297334,40
+10,Cost-to-sample,Cost-to-sample,5,65.819833863328,40
+10,Cost-to-sample,Cost-to-sample,6,44.027440738066,40
+10,Cost-to-sample,Cost-to-sample,7,22.2187638075885,40
+11,Biased-prior,Biased-prior,1,0.802412894584818,40
+11,Biased-prior,Biased-prior,2,0.816812407610208,40
+11,Biased-prior,Biased-prior,3,0.820927484190458,40
+11,Biased-prior,Biased-prior,4,0.811854158752839,40
+11,Biased-prior,Biased-prior,5,0.780009842317405,40
+11,Biased-prior,Biased-prior,6,0.711576331514433,40
+11,Biased-prior,Biased-prior,7,0.588870091714157,40
+11,Cost-to-sample,Biased-prior,1,1.23974547312874,40
+11,Cost-to-sample,Biased-prior,2,1.16598415737122,40
+11,Cost-to-sample,Biased-prior,3,1.07632583482664,40
+11,Cost-to-sample,Biased-prior,4,0.987789424862176,40
+11,Cost-to-sample,Biased-prior,5,0.881686636842334,40
+11,Cost-to-sample,Biased-prior,6,0.75279410433322,40
+11,Cost-to-sample,Biased-prior,7,0.584839323130564,40
+12,Biased-prior,Biased-prior,1,0.627787323323101,40
+12,Biased-prior,Biased-prior,2,0.533595453780572,40
+12,Biased-prior,Biased-prior,3,0.458844286009855,40
+12,Biased-prior,Biased-prior,4,0.384513277310825,40
+12,Biased-prior,Biased-prior,5,0.308172492348968,40
+12,Biased-prior,Biased-prior,6,0.205969494076782,40
+12,Biased-prior,Biased-prior,7,0.080286969718239,40
+12,Cost-to-sample,Biased-prior,1,-5.99772621622671,40
+12,Cost-to-sample,Biased-prior,2,-5.99535067271594,40
+12,Cost-to-sample,Biased-prior,3,-5.99737039028566,40
+12,Cost-to-sample,Biased-prior,4,-6.00004780694356,40
+12,Cost-to-sample,Biased-prior,5,-6.00267839394508,40
+12,Cost-to-sample,Biased-prior,6,-6.0076451786247,40
+12,Cost-to-sample,Biased-prior,7,-6.01632870521633,40
+13,Biased-prior,Cost-to-sample,1,0.871630415359757,40
+13,Biased-prior,Cost-to-sample,2,0.883040251120577,40
+13,Biased-prior,Cost-to-sample,3,0.892998524700057,40
+13,Biased-prior,Cost-to-sample,4,0.902044953532834,40
+13,Biased-prior,Cost-to-sample,5,0.907442022025554,40
+13,Biased-prior,Cost-to-sample,6,0.885464275748695,40
+13,Biased-prior,Cost-to-sample,7,0.777854410065277,40
+13,Cost-to-sample,Cost-to-sample,1,5.18883727309282,40
+13,Cost-to-sample,Cost-to-sample,2,4.52786861892869,40
+13,Cost-to-sample,Cost-to-sample,3,3.86927945162065,40
+13,Cost-to-sample,Cost-to-sample,4,3.21322626619587,40
+13,Cost-to-sample,Cost-to-sample,5,2.55513193409761,40
+13,Cost-to-sample,Cost-to-sample,6,1.89056467070029,40
+13,Cost-to-sample,Cost-to-sample,7,1.23582929082043,40
+14,Biased-prior,Cut off,1,0.786310502168498,40
+14,Biased-prior,Cut off,2,0.802477649450286,40
+14,Biased-prior,Cut off,3,0.816926938747963,40
+14,Biased-prior,Cut off,4,0.829976295757156,40
+14,Biased-prior,Cut off,5,0.835989559899826,40
+14,Biased-prior,Cut off,6,0.804265150479092,40
+14,Biased-prior,Cut off,7,0.679842627400181,40
+14,Cost-to-sample,Cut off,1,5.11741626664878,40
+14,Cost-to-sample,Cut off,2,4.46840250654867,40
+14,Cost-to-sample,Cut off,3,3.80583677506007,40
+14,Cost-to-sample,Cut off,4,3.13451521720386,40
+14,Cost-to-sample,Cut off,5,2.46534887293324,40
+14,Cost-to-sample,Cut off,6,1.8027270578194,40
+14,Cost-to-sample,Cut off,7,1.13648091107841,40
+15,Biased-prior,Cost-to-sample,1,0.666682955436891,40
+15,Biased-prior,Cost-to-sample,2,0.652089223576937,40
+15,Biased-prior,Cost-to-sample,3,0.622634380341151,40
+15,Biased-prior,Cost-to-sample,4,0.570552674372383,40
+15,Biased-prior,Cost-to-sample,5,0.504991196692905,40
+15,Biased-prior,Cost-to-sample,6,0.402130400158965,40
+15,Biased-prior,Cost-to-sample,7,0.256945625868561,40
+15,Cost-to-sample,Cost-to-sample,1,-58.3516901918617,40
+15,Cost-to-sample,Cost-to-sample,2,-58.341190363995,40
+15,Cost-to-sample,Cost-to-sample,3,-58.344527094979,40
+15,Cost-to-sample,Cost-to-sample,4,-58.3547957533527,40
+15,Cost-to-sample,Cost-to-sample,5,-58.3587399967949,40
+15,Cost-to-sample,Cost-to-sample,6,-58.3687675025941,40
+15,Cost-to-sample,Cost-to-sample,7,-58.3815313612824,40
+16,Biased-prior,Biased-prior,1,0.671009929225401,40
+16,Biased-prior,Biased-prior,2,0.690120943931195,40
+16,Biased-prior,Biased-prior,3,0.707531315817795,40
+16,Biased-prior,Biased-prior,4,0.719936778894366,40
+16,Biased-prior,Biased-prior,5,0.718489711982238,40
+16,Biased-prior,Biased-prior,6,0.675425907283301,40
+16,Biased-prior,Biased-prior,7,0.536743823980617,40
+16,Cost-to-sample,Biased-prior,1,1.70168084531825,40
+16,Cost-to-sample,Biased-prior,2,1.53498532149429,40
+16,Cost-to-sample,Biased-prior,3,1.36589239230368,40
+16,Cost-to-sample,Biased-prior,4,1.18206734979655,40
+16,Cost-to-sample,Biased-prior,5,0.983730638345953,40
+16,Cost-to-sample,Biased-prior,6,0.769054924156218,40
+16,Cost-to-sample,Biased-prior,7,0.528713329617048,40
+17,Biased-prior,Biased-prior,1,0.82106759441362,40
+17,Biased-prior,Biased-prior,2,0.834242705100678,40
+17,Biased-prior,Biased-prior,3,0.846030828061611,40
+17,Biased-prior,Biased-prior,4,0.856944446199568,40
+17,Biased-prior,Biased-prior,5,0.865268115372306,40
+17,Biased-prior,Biased-prior,6,0.849927312153503,40
+17,Biased-prior,Biased-prior,7,0.747414881520281,40
+17,Cost-to-sample,Biased-prior,1,1.49518180260912,40
+17,Cost-to-sample,Biased-prior,2,1.37561359518349,40
+17,Cost-to-sample,Biased-prior,3,1.254301550402,40
+17,Cost-to-sample,Biased-prior,4,1.12521858073667,40
+17,Cost-to-sample,Biased-prior,5,0.991448895788102,40
+17,Cost-to-sample,Biased-prior,6,0.847717485193805,40
+17,Cost-to-sample,Biased-prior,7,0.66742384241317,40
+18,Biased-prior,Biased-prior,1,0.884773686125053,40
+18,Biased-prior,Biased-prior,2,0.889928717799348,40
+18,Biased-prior,Biased-prior,3,0.883046024354915,40
+18,Biased-prior,Biased-prior,4,0.864069482509499,40
+18,Biased-prior,Biased-prior,5,0.827339881900933,40
+18,Biased-prior,Biased-prior,6,0.761098557829516,40
+18,Biased-prior,Biased-prior,7,0.651439799697292,40
+18,Cost-to-sample,Biased-prior,1,1.02804142783814,40
+18,Cost-to-sample,Biased-prior,2,0.999795449702519,40
+18,Cost-to-sample,Biased-prior,3,0.965942359603077,40
+18,Cost-to-sample,Biased-prior,4,0.921222334130418,40
+18,Cost-to-sample,Biased-prior,5,0.86363720142316,40
+18,Cost-to-sample,Biased-prior,6,0.775179142441406,40
+18,Cost-to-sample,Biased-prior,7,0.648381541372939,40
+19,Biased-prior,Biased-prior,1,0.868961976923996,40
+19,Biased-prior,Biased-prior,2,0.880219399362223,40
+19,Biased-prior,Biased-prior,3,0.888652672599825,40
+19,Biased-prior,Biased-prior,4,0.893145542380533,40
+19,Biased-prior,Biased-prior,5,0.884476261382295,40
+19,Biased-prior,Biased-prior,6,0.839437435037468,40
+19,Biased-prior,Biased-prior,7,0.712782456803494,40
+19,Cost-to-sample,Biased-prior,1,1.24328053358957,40
+19,Cost-to-sample,Biased-prior,2,1.17088551117965,40
+19,Cost-to-sample,Biased-prior,3,1.09908792444401,40
+19,Cost-to-sample,Biased-prior,4,1.01869596730228,40
+19,Cost-to-sample,Biased-prior,5,0.931005950932142,40
+19,Cost-to-sample,Biased-prior,6,0.826740129970508,40
+19,Cost-to-sample,Biased-prior,7,0.673153685136241,40
+20,Biased-prior,Biased-prior,1,0.814583344585085,40
+20,Biased-prior,Biased-prior,2,0.825999951289536,40
+20,Biased-prior,Biased-prior,3,0.824749876391549,40
+20,Biased-prior,Biased-prior,4,0.806801375035195,40
+20,Biased-prior,Biased-prior,5,0.777507168499992,40
+20,Biased-prior,Biased-prior,6,0.714778532721654,40
+20,Biased-prior,Biased-prior,7,0.596822354488139,40
+20,Cost-to-sample,Biased-prior,1,0.992251857937994,40
+20,Cost-to-sample,Biased-prior,2,0.962827151516245,40
+20,Cost-to-sample,Biased-prior,3,0.920923923596305,40
+20,Cost-to-sample,Biased-prior,4,0.865604479577064,40
+20,Cost-to-sample,Biased-prior,5,0.800142555463324,40
+20,Cost-to-sample,Biased-prior,6,0.708592419233798,40
+20,Cost-to-sample,Biased-prior,7,0.57402479893219,40
+21,Biased-prior,Biased-prior,1,0.750177043303343,40
+21,Biased-prior,Biased-prior,2,0.76498909568252,40
+21,Biased-prior,Biased-prior,3,0.780194944166978,40
+21,Biased-prior,Biased-prior,4,0.796869269737004,40
+21,Biased-prior,Biased-prior,5,0.817182937985838,40
+21,Biased-prior,Biased-prior,6,0.842663847391843,40
+21,Biased-prior,Biased-prior,7,0.812895530354225,40
+21,Cost-to-sample,Biased-prior,1,1.71305892150545,40
+21,Cost-to-sample,Biased-prior,2,1.54985611852947,40
+21,Cost-to-sample,Biased-prior,3,1.38360000787354,40
+21,Cost-to-sample,Biased-prior,4,1.20912393129603,40
+21,Cost-to-sample,Biased-prior,5,1.03712897784543,40
+21,Cost-to-sample,Biased-prior,6,0.853351486213708,40
+21,Cost-to-sample,Biased-prior,7,0.618012702609065,40
+22,Biased-prior,Cost-to-sample,1,0.885899897121128,40
+22,Biased-prior,Cost-to-sample,2,0.896242262534458,40
+22,Biased-prior,Cost-to-sample,3,0.904748790911389,40
+22,Biased-prior,Cost-to-sample,4,0.911677709408112,40
+22,Biased-prior,Cost-to-sample,5,0.911487795053634,40
+22,Biased-prior,Cost-to-sample,6,0.88262850527949,40
+22,Biased-prior,Cost-to-sample,7,0.769348298292519,40
+22,Cost-to-sample,Cost-to-sample,1,1.38678446923884,40
+22,Cost-to-sample,Cost-to-sample,2,1.29513647163231,40
+22,Cost-to-sample,Cost-to-sample,3,1.19818247219258,40
+22,Cost-to-sample,Cost-to-sample,4,1.10146134468739,40
+22,Cost-to-sample,Cost-to-sample,5,1.00246977986335,40
+22,Cost-to-sample,Cost-to-sample,6,0.89196398702256,40
+22,Cost-to-sample,Cost-to-sample,7,0.733254251090991,40
+23,Biased-prior,Biased-prior,1,0.788119521818753,40
+23,Biased-prior,Biased-prior,2,0.804487533751879,40
+23,Biased-prior,Biased-prior,3,0.815912957244189,40
+23,Biased-prior,Biased-prior,4,0.818423785976235,40
+23,Biased-prior,Biased-prior,5,0.800816006522271,40
+23,Biased-prior,Biased-prior,6,0.745467256613845,40
+23,Biased-prior,Biased-prior,7,0.605521430690434,40
+23,Cost-to-sample,Biased-prior,1,1.63066526713744,40
+23,Cost-to-sample,Biased-prior,2,1.48820398582956,40
+23,Cost-to-sample,Biased-prior,3,1.33752554816681,40
+23,Cost-to-sample,Biased-prior,4,1.17777705487536,40
+23,Cost-to-sample,Biased-prior,5,1.01825855686629,40
+23,Cost-to-sample,Biased-prior,6,0.841960926733444,40
+23,Cost-to-sample,Biased-prior,7,0.625328213588027,40
+24,Biased-prior,Biased-prior,1,0.785082613527735,40
+24,Biased-prior,Biased-prior,2,0.797464423313411,40
+24,Biased-prior,Biased-prior,3,0.798935778776278,40
+24,Biased-prior,Biased-prior,4,0.786019537521672,40
+24,Biased-prior,Biased-prior,5,0.754307874059655,40
+24,Biased-prior,Biased-prior,6,0.686926533116947,40
+24,Biased-prior,Biased-prior,7,0.568599579833769,40
+24,Cost-to-sample,Biased-prior,1,1.13608260382759,40
+24,Cost-to-sample,Biased-prior,2,1.07703546715718,40
+24,Cost-to-sample,Biased-prior,3,1.00978457768523,40
+24,Cost-to-sample,Biased-prior,4,0.934563815364071,40
+24,Cost-to-sample,Biased-prior,5,0.843319385396827,40
+24,Cost-to-sample,Biased-prior,6,0.726381941513738,40
+24,Cost-to-sample,Biased-prior,7,0.57396433349893,40
+25,Biased-prior,Biased-prior,1,0.598265789576795,40
+25,Biased-prior,Biased-prior,2,0.485610008860216,40
+25,Biased-prior,Biased-prior,3,0.38675349042384,40
+25,Biased-prior,Biased-prior,4,0.295295589605387,40
+25,Biased-prior,Biased-prior,5,0.198788456832118,40
+25,Biased-prior,Biased-prior,6,0.104610733343825,40
+25,Biased-prior,Biased-prior,7,0,40
+25,Cost-to-sample,Biased-prior,1,-0.0153053425559898,40
+25,Cost-to-sample,Biased-prior,2,-0.0136364627539039,40
+25,Cost-to-sample,Biased-prior,3,-0.0108854028053467,40
+25,Cost-to-sample,Biased-prior,4,-0.0102065865747253,40
+25,Cost-to-sample,Biased-prior,5,-0.0119909350118583,40
+25,Cost-to-sample,Biased-prior,6,-0.0259072720271446,40
+25,Cost-to-sample,Biased-prior,7,-0.0315189495688674,40
+26,Biased-prior,Cost-to-sample,1,0.74164211515458,40
+26,Biased-prior,Cost-to-sample,2,0.758277552575762,40
+26,Biased-prior,Cost-to-sample,3,0.77606912167139,40
+26,Biased-prior,Cost-to-sample,4,0.795336553982867,40
+26,Biased-prior,Cost-to-sample,5,0.817386941341873,40
+26,Biased-prior,Cost-to-sample,6,0.818115407071775,40
+26,Biased-prior,Cost-to-sample,7,0.741327597686166,40
+26,Cost-to-sample,Cost-to-sample,1,226.397540282215,40
+26,Cost-to-sample,Cost-to-sample,2,194.113097453526,40
+26,Cost-to-sample,Cost-to-sample,3,161.836819914612,40
+26,Cost-to-sample,Cost-to-sample,4,129.549703330101,40
+26,Cost-to-sample,Cost-to-sample,5,97.2726549268518,40
+26,Cost-to-sample,Cost-to-sample,6,64.9802540334059,40
+26,Cost-to-sample,Cost-to-sample,7,32.6931829431179,40
+27,Biased-prior,Biased-prior,1,0.832864577912383,40
+27,Biased-prior,Biased-prior,2,0.847465626560881,40
+27,Biased-prior,Biased-prior,3,0.862182639352996,40
+27,Biased-prior,Biased-prior,4,0.879721509250011,40
+27,Biased-prior,Biased-prior,5,0.898623287550234,40
+27,Biased-prior,Biased-prior,6,0.917454153264846,40
+27,Biased-prior,Biased-prior,7,0.875726334824608,40
+27,Cost-to-sample,Biased-prior,1,9.51635945079528,40
+27,Cost-to-sample,Biased-prior,2,8.22653751261665,40
+27,Cost-to-sample,Biased-prior,3,6.94263248936925,40
+27,Cost-to-sample,Biased-prior,4,5.66671954240907,40
+27,Cost-to-sample,Biased-prior,5,4.37641644634079,40
+27,Cost-to-sample,Biased-prior,6,3.09133264465583,40
+27,Cost-to-sample,Biased-prior,7,1.80160929339048,40
+28,Biased-prior,Biased-prior,1,0.738329535099641,40
+28,Biased-prior,Biased-prior,2,0.700393207425638,40
+28,Biased-prior,Biased-prior,3,0.649750840731354,40
+28,Biased-prior,Biased-prior,4,0.597486810464713,40
+28,Biased-prior,Biased-prior,5,0.517845576903895,40
+28,Biased-prior,Biased-prior,6,0.413097550746892,40
+28,Biased-prior,Biased-prior,7,0.252679619440406,40
+28,Cost-to-sample,Biased-prior,1,-86.2974843528917,40
+28,Cost-to-sample,Biased-prior,2,-86.2964559088272,40
+28,Cost-to-sample,Biased-prior,3,-86.30216330968,40
+28,Cost-to-sample,Biased-prior,4,-86.3021121092465,40
+28,Cost-to-sample,Biased-prior,5,-86.3063812075975,40
+28,Cost-to-sample,Biased-prior,6,-86.3106365384732,40
+28,Cost-to-sample,Biased-prior,7,-86.3155601336696,40
+29,Biased-prior,Biased-prior,1,0.742539778527213,40
+29,Biased-prior,Biased-prior,2,0.757637020978241,40
+29,Biased-prior,Biased-prior,3,0.772530204759282,40
+29,Biased-prior,Biased-prior,4,0.789611340397047,40
+29,Biased-prior,Biased-prior,5,0.809881023804365,40
+29,Biased-prior,Biased-prior,6,0.830531047852243,40
+29,Biased-prior,Biased-prior,7,0.795211127750574,40
+29,Cost-to-sample,Biased-prior,1,1.75211642800065,40
+29,Cost-to-sample,Biased-prior,2,1.58591337248161,40
+29,Cost-to-sample,Biased-prior,3,1.41329852811933,40
+29,Cost-to-sample,Biased-prior,4,1.23333551949231,40
+29,Cost-to-sample,Biased-prior,5,1.04860066030602,40
+29,Cost-to-sample,Biased-prior,6,0.852752235089526,40
+29,Cost-to-sample,Biased-prior,7,0.622600189378151,40
+30,Biased-prior,Cost-to-sample,1,0.853362655829503,40
+30,Biased-prior,Cost-to-sample,2,0.864434942973422,40
+30,Biased-prior,Cost-to-sample,3,0.867167986621062,40
+30,Biased-prior,Cost-to-sample,4,0.855312032390957,40
+30,Biased-prior,Cost-to-sample,5,0.82012085376462,40
+30,Biased-prior,Cost-to-sample,6,0.754797144256245,40
+30,Biased-prior,Cost-to-sample,7,0.636514544894405,40
+30,Cost-to-sample,Cost-to-sample,1,1.28014991180418,40
+30,Cost-to-sample,Cost-to-sample,2,1.20200302153245,40
+30,Cost-to-sample,Cost-to-sample,3,1.11196084615356,40
+30,Cost-to-sample,Cost-to-sample,4,1.02485764802203,40
+30,Cost-to-sample,Cost-to-sample,5,0.929238735932832,40
+30,Cost-to-sample,Cost-to-sample,6,0.812319704711849,40
+30,Cost-to-sample,Cost-to-sample,7,0.649660812639882,40
+31,Biased-prior,Cut off,1,0.794011687474968,40
+31,Biased-prior,Cut off,2,0.810333760062475,40
+31,Biased-prior,Cut off,3,0.82726724907686,40
+31,Biased-prior,Cut off,4,0.846315890296883,40
+31,Biased-prior,Cut off,5,0.870338666069009,40
+31,Biased-prior,Cut off,6,0.892851796448735,40
+31,Biased-prior,Cut off,7,0.864933191093785,40
+31,Cost-to-sample,Cut off,1,2.55261720409727,40
+31,Cost-to-sample,Cut off,2,2.26912281227604,40
+31,Cost-to-sample,Cut off,3,1.9800380539868,40
+31,Cost-to-sample,Cut off,4,1.67856364243983,40
+31,Cost-to-sample,Cut off,5,1.38067116556996,40
+31,Cost-to-sample,Cut off,6,1.08223452708697,40
+31,Cost-to-sample,Cut off,7,0.767004532636494,40
+32,Biased-prior,Biased-prior,1,0.655879151685381,40
+32,Biased-prior,Biased-prior,2,0.639577077314107,40
+32,Biased-prior,Biased-prior,3,0.60725266309962,40
+32,Biased-prior,Biased-prior,4,0.56268539395119,40
+32,Biased-prior,Biased-prior,5,0.49902308827117,40
+32,Biased-prior,Biased-prior,6,0.407802342365016,40
+32,Biased-prior,Biased-prior,7,0.26198582502177,40
+32,Cost-to-sample,Biased-prior,1,0.28888490721259,40
+32,Cost-to-sample,Biased-prior,2,0.301770617901479,40
+32,Cost-to-sample,Biased-prior,3,0.305367152994534,40
+32,Cost-to-sample,Biased-prior,4,0.304194366384918,40
+32,Cost-to-sample,Biased-prior,5,0.298157907652014,40
+32,Cost-to-sample,Biased-prior,6,0.271680252232807,40
+32,Cost-to-sample,Biased-prior,7,0.221755312019906,40
+33,Biased-prior,Cost-to-sample,1,0.903117426994077,40
+33,Biased-prior,Cost-to-sample,2,0.914171588291172,40
+33,Biased-prior,Cost-to-sample,3,0.925439496882965,40
+33,Biased-prior,Cost-to-sample,4,0.937172357683976,40
+33,Biased-prior,Cost-to-sample,5,0.951186323731101,40
+33,Biased-prior,Cost-to-sample,6,0.966323131824956,40
+33,Biased-prior,Cost-to-sample,7,0.965809793390956,40
+33,Cost-to-sample,Cost-to-sample,1,110.145083827373,40
+33,Cost-to-sample,Cost-to-sample,2,94.4881989789039,40
+33,Cost-to-sample,Cost-to-sample,3,78.8358930796728,40
+33,Cost-to-sample,Cost-to-sample,4,63.1847081895705,40
+33,Cost-to-sample,Cost-to-sample,5,47.5380074537445,40
+33,Cost-to-sample,Cost-to-sample,6,31.8985058185675,40
+33,Cost-to-sample,Cost-to-sample,7,16.2528686796082,40
+34,Biased-prior,Cost-to-sample,1,0.743512882292756,40
+34,Biased-prior,Cost-to-sample,2,0.755347437400888,40
+34,Biased-prior,Cost-to-sample,3,0.74983428299564,40
+34,Biased-prior,Cost-to-sample,4,0.720206453948683,40
+34,Biased-prior,Cost-to-sample,5,0.665880023354565,40
+34,Biased-prior,Cost-to-sample,6,0.592843178418918,40
+34,Biased-prior,Cost-to-sample,7,0.484210712096362,40
+34,Cost-to-sample,Cost-to-sample,1,0.998123568938223,40
+34,Cost-to-sample,Cost-to-sample,2,0.960298739283827,40
+34,Cost-to-sample,Cost-to-sample,3,0.905392747161127,40
+34,Cost-to-sample,Cost-to-sample,4,0.829280128790421,40
+34,Cost-to-sample,Cost-to-sample,5,0.735444444702521,40
+34,Cost-to-sample,Cost-to-sample,6,0.623948779590497,40
+34,Cost-to-sample,Cost-to-sample,7,0.484302785271018,40
+35,Biased-prior,Cost-to-sample,1,0.691808427770589,40
+35,Biased-prior,Cost-to-sample,2,0.665881882633776,40
+35,Biased-prior,Cost-to-sample,3,0.635011299683423,40
+35,Biased-prior,Cost-to-sample,4,0.592115516238301,40
+35,Biased-prior,Cost-to-sample,5,0.523061510068721,40
+35,Biased-prior,Cost-to-sample,6,0.424122805053605,40
+35,Biased-prior,Cost-to-sample,7,0.277784669163532,40
+35,Cost-to-sample,Cost-to-sample,1,-99.5690513742106,40
+35,Cost-to-sample,Cost-to-sample,2,-99.5702273574642,40
+35,Cost-to-sample,Cost-to-sample,3,-99.5733665450486,40
+35,Cost-to-sample,Cost-to-sample,4,-99.5752929055772,40
+35,Cost-to-sample,Cost-to-sample,5,-99.5856287863798,40
+35,Cost-to-sample,Cost-to-sample,6,-99.5886793816161,40
+35,Cost-to-sample,Cost-to-sample,7,-99.6009063486341,40
+36,Biased-prior,Biased-prior,1,0.781484346071485,40
+36,Biased-prior,Biased-prior,2,0.792331675520946,40
+36,Biased-prior,Biased-prior,3,0.788821141543626,40
+36,Biased-prior,Biased-prior,4,0.766786516349077,40
+36,Biased-prior,Biased-prior,5,0.719373357676681,40
+36,Biased-prior,Biased-prior,6,0.653852663880278,40
+36,Biased-prior,Biased-prior,7,0.528686314083462,40
+36,Cost-to-sample,Biased-prior,1,1.06957002547958,40
+36,Cost-to-sample,Biased-prior,2,1.02117986474786,40
+36,Cost-to-sample,Biased-prior,3,0.958596000653468,40
+36,Cost-to-sample,Biased-prior,4,0.881890931521514,40
+36,Cost-to-sample,Biased-prior,5,0.791462685569427,40
+36,Cost-to-sample,Biased-prior,6,0.682627757109991,40
+36,Cost-to-sample,Biased-prior,7,0.524217161481784,40
+37,Biased-prior,Cost-to-sample,1,0.806000377612862,40
+37,Biased-prior,Cost-to-sample,2,0.822234013711636,40
+37,Biased-prior,Cost-to-sample,3,0.837067981693098,40
+37,Biased-prior,Cost-to-sample,4,0.850647588782085,40
+37,Biased-prior,Cost-to-sample,5,0.855119735593486,40
+37,Biased-prior,Cost-to-sample,6,0.822033077456936,40
+37,Biased-prior,Cost-to-sample,7,0.693221454081551,40
+37,Cost-to-sample,Cost-to-sample,1,1.39480673581002,40
+37,Cost-to-sample,Cost-to-sample,2,1.29211626023291,40
+37,Cost-to-sample,Cost-to-sample,3,1.17521568231703,40
+37,Cost-to-sample,Cost-to-sample,4,1.05642920615312,40
+37,Cost-to-sample,Cost-to-sample,5,0.930204137539096,40
+37,Cost-to-sample,Cost-to-sample,6,0.782115008319159,40
+37,Cost-to-sample,Cost-to-sample,7,0.59789022704649,40
+38,Biased-prior,Cut off,1,0.80639907852275,40
+38,Biased-prior,Cut off,2,0.821893507232545,40
+38,Biased-prior,Cut off,3,0.8358629431056,40
+38,Biased-prior,Cut off,4,0.848432617803931,40
+38,Biased-prior,Cut off,5,0.856487937854019,40
+38,Biased-prior,Cut off,6,0.829431020428053,40
+38,Biased-prior,Cut off,7,0.701616400999585,40
+38,Cost-to-sample,Cut off,1,11.9222783686197,40
+38,Cost-to-sample,Cut off,2,10.2942100418233,40
+38,Cost-to-sample,Cut off,3,8.6645737253734,40
+38,Cost-to-sample,Cut off,4,7.02711668481754,40
+38,Cost-to-sample,Cut off,5,5.39288205237095,40
+38,Cost-to-sample,Cut off,6,3.76148649496492,40
+38,Cost-to-sample,Cut off,7,2.11634264268684,40
+39,Biased-prior,Cost-to-sample,1,0.894075058829679,40
+39,Biased-prior,Cost-to-sample,2,0.903034298373752,40
+39,Biased-prior,Cost-to-sample,3,0.911303683751994,40
+39,Biased-prior,Cost-to-sample,4,0.920239433400358,40
+39,Biased-prior,Cost-to-sample,5,0.930889119401101,40
+39,Biased-prior,Cost-to-sample,6,0.942503336849855,40
+39,Biased-prior,Cost-to-sample,7,0.920519095568242,40
+39,Cost-to-sample,Cost-to-sample,1,2.39714934223566,40
+39,Cost-to-sample,Cost-to-sample,2,2.14255008925639,40
+39,Cost-to-sample,Cost-to-sample,3,1.89140156170842,40
+39,Cost-to-sample,Cost-to-sample,4,1.64697760441598,40
+39,Cost-to-sample,Cost-to-sample,5,1.40473226530822,40
+39,Cost-to-sample,Cost-to-sample,6,1.16560075128483,40
+39,Cost-to-sample,Cost-to-sample,7,0.912323879192123,40
+40,Biased-prior,Biased-prior,1,0.805915849044637,40
+40,Biased-prior,Biased-prior,2,0.821485184601122,40
+40,Biased-prior,Biased-prior,3,0.824848313287593,40
+40,Biased-prior,Biased-prior,4,0.813352491813792,40
+40,Biased-prior,Biased-prior,5,0.777248628256555,40
+40,Biased-prior,Biased-prior,6,0.708447028914443,40
+40,Biased-prior,Biased-prior,7,0.582833815668226,40
+40,Cost-to-sample,Biased-prior,1,1.35921212561451,40
+40,Cost-to-sample,Biased-prior,2,1.26306962948614,40
+40,Cost-to-sample,Biased-prior,3,1.1541948737982,40
+40,Cost-to-sample,Biased-prior,4,1.0451410312827,40
+40,Cost-to-sample,Biased-prior,5,0.923923003744763,40
+40,Cost-to-sample,Biased-prior,6,0.784088370102764,40
+40,Cost-to-sample,Biased-prior,7,0.601245937349454,40
+41,Biased-prior,Biased-prior,1,0.817718662132944,40
+41,Biased-prior,Biased-prior,2,0.83203015061401,40
+41,Biased-prior,Biased-prior,3,0.845756527155812,40
+41,Biased-prior,Biased-prior,4,0.861032294473196,40
+41,Biased-prior,Biased-prior,5,0.878458364011423,40
+41,Biased-prior,Biased-prior,6,0.888950875959318,40
+41,Biased-prior,Biased-prior,7,0.827316574484316,40
+41,Cost-to-sample,Biased-prior,1,1.98370231504994,40
+41,Cost-to-sample,Biased-prior,2,1.78948138540745,40
+41,Cost-to-sample,Biased-prior,3,1.58728239732242,40
+41,Cost-to-sample,Biased-prior,4,1.38267318388289,40
+41,Cost-to-sample,Biased-prior,5,1.17449524061071,40
+41,Cost-to-sample,Biased-prior,6,0.961319553139143,40
+41,Cost-to-sample,Biased-prior,7,0.715719132824238,40
+42,Biased-prior,Biased-prior,1,0.888510652346859,40
+42,Biased-prior,Biased-prior,2,0.897430569707965,40
+42,Biased-prior,Biased-prior,3,0.899556037379034,40
+42,Biased-prior,Biased-prior,4,0.892262084675393,40
+42,Biased-prior,Biased-prior,5,0.867424781553495,40
+42,Biased-prior,Biased-prior,6,0.809238880200853,40
+42,Biased-prior,Biased-prior,7,0.695270830154009,40
+42,Cost-to-sample,Biased-prior,1,1.16784833353861,40
+42,Cost-to-sample,Biased-prior,2,1.11384441931723,40
+42,Cost-to-sample,Biased-prior,3,1.05635957579458,40
+42,Cost-to-sample,Biased-prior,4,0.997386626676113,40
+42,Cost-to-sample,Biased-prior,5,0.925015056366604,40
+42,Cost-to-sample,Biased-prior,6,0.823716966457223,40
+42,Cost-to-sample,Biased-prior,7,0.683385531185393,40
+43,Biased-prior,Biased-prior,1,0.687900271581958,40
+43,Biased-prior,Biased-prior,2,0.706436246734509,40
+43,Biased-prior,Biased-prior,3,0.712892975116005,40
+43,Biased-prior,Biased-prior,4,0.704408178888257,40
+43,Biased-prior,Biased-prior,5,0.677445743437635,40
+43,Biased-prior,Biased-prior,6,0.610615088563758,40
+43,Biased-prior,Biased-prior,7,0.483264111332088,40
+43,Cost-to-sample,Biased-prior,1,1.61091857361035,40
+43,Cost-to-sample,Biased-prior,2,1.4659866988508,40
+43,Cost-to-sample,Biased-prior,3,1.30958213801365,40
+43,Cost-to-sample,Biased-prior,4,1.13350571860337,40
+43,Cost-to-sample,Biased-prior,5,0.952070059154586,40
+43,Cost-to-sample,Biased-prior,6,0.753537419582739,40
+43,Cost-to-sample,Biased-prior,7,0.528386631093723,40
+44,Biased-prior,Biased-prior,1,0.611893113379395,40
+44,Biased-prior,Biased-prior,2,0.553243089362072,40
+44,Biased-prior,Biased-prior,3,0.486323764702039,40
+44,Biased-prior,Biased-prior,4,0.423268919874745,40
+44,Biased-prior,Biased-prior,5,0.357514052772779,40
+44,Biased-prior,Biased-prior,6,0.269873600732444,40
+44,Biased-prior,Biased-prior,7,0.142696562814826,40
+44,Cost-to-sample,Biased-prior,1,-99.553240137048,40
+44,Cost-to-sample,Biased-prior,2,-99.5461551721794,40
+44,Cost-to-sample,Biased-prior,3,-99.547227977369,40
+44,Cost-to-sample,Biased-prior,4,-99.5488988159969,40
+44,Cost-to-sample,Biased-prior,5,-99.5525631063195,40
+44,Cost-to-sample,Biased-prior,6,-99.5544629138775,40
+44,Cost-to-sample,Biased-prior,7,-99.5672183456714,40
+45,Biased-prior,Biased-prior,1,0.731002901174756,40
+45,Biased-prior,Biased-prior,2,0.74744907342041,40
+45,Biased-prior,Biased-prior,3,0.759555246014594,40
+45,Biased-prior,Biased-prior,4,0.762158037060034,40
+45,Biased-prior,Biased-prior,5,0.744459168600275,40
+45,Biased-prior,Biased-prior,6,0.693824465277938,40
+45,Biased-prior,Biased-prior,7,0.564119406262461,40
+45,Cost-to-sample,Biased-prior,1,1.37200387572449,40
+45,Cost-to-sample,Biased-prior,2,1.27100751710531,40
+45,Cost-to-sample,Biased-prior,3,1.15733711943909,40
+45,Cost-to-sample,Biased-prior,4,1.03403982768818,40
+45,Cost-to-sample,Biased-prior,5,0.900790518274063,40
+45,Cost-to-sample,Biased-prior,6,0.75497212898698,40
+45,Cost-to-sample,Biased-prior,7,0.564383681897453,40
+46,Biased-prior,Cut off,1,0.865258566076416,40
+46,Biased-prior,Cut off,2,0.876229328100512,40
+46,Biased-prior,Cut off,3,0.886579180640592,40
+46,Biased-prior,Cut off,4,0.897993823356898,40
+46,Biased-prior,Cut off,5,0.91227839604092,40
+46,Biased-prior,Cut off,6,0.932039314845578,40
+46,Biased-prior,Cut off,7,0.931156452743211,40
+46,Cost-to-sample,Cut off,1,4.63638133459794,40
+46,Cost-to-sample,Cut off,2,4.05985263036313,40
+46,Cost-to-sample,Cut off,3,3.48454225321146,40
+46,Cost-to-sample,Cut off,4,2.91035032429052,40
+46,Cost-to-sample,Cut off,5,2.33331488965153,40
+46,Cost-to-sample,Cut off,6,1.76103110679337,40
+46,Cost-to-sample,Cut off,7,1.19276740697758,40
+47,Biased-prior,Biased-prior,1,0.802234540979391,40
+47,Biased-prior,Biased-prior,2,0.81278806888961,40
+47,Biased-prior,Biased-prior,3,0.806925034814826,40
+47,Biased-prior,Biased-prior,4,0.777908752946789,40
+47,Biased-prior,Biased-prior,5,0.728958510269111,40
+47,Biased-prior,Biased-prior,6,0.658666032423477,40
+47,Biased-prior,Biased-prior,7,0.546068966142461,40
+47,Cost-to-sample,Biased-prior,1,1.01013475400606,40
+47,Cost-to-sample,Biased-prior,2,0.97834832425644,40
+47,Cost-to-sample,Biased-prior,3,0.932920171374446,40
+47,Cost-to-sample,Biased-prior,4,0.865835872576422,40
+47,Cost-to-sample,Biased-prior,5,0.785524591039609,40
+47,Cost-to-sample,Biased-prior,6,0.685728509704268,40
+47,Cost-to-sample,Biased-prior,7,0.549080245424426,40
+48,Biased-prior,Biased-prior,1,0.684612670020833,40
+48,Biased-prior,Biased-prior,2,0.627214678922947,40
+48,Biased-prior,Biased-prior,3,0.5617315555817,40
+48,Biased-prior,Biased-prior,4,0.489155479544311,40
+48,Biased-prior,Biased-prior,5,0.409141968870208,40
+48,Biased-prior,Biased-prior,6,0.318240572912433,40
+48,Biased-prior,Biased-prior,7,0.186757931728017,40
+48,Cost-to-sample,Biased-prior,1,-99.1839282806015,40
+48,Cost-to-sample,Biased-prior,2,-99.1768794848457,40
+48,Cost-to-sample,Biased-prior,3,-99.1898187244854,40
+48,Cost-to-sample,Biased-prior,4,-99.1924808233846,40
+48,Cost-to-sample,Biased-prior,5,-99.1996721036382,40
+48,Cost-to-sample,Biased-prior,6,-99.2010693647522,40
+48,Cost-to-sample,Biased-prior,7,-99.1983667884835,40
+49,Biased-prior,Cost-to-sample,1,0.73060729598526,40
+49,Biased-prior,Cost-to-sample,2,0.687001935352692,40
+49,Biased-prior,Cost-to-sample,3,0.638541225103839,40
+49,Biased-prior,Cost-to-sample,4,0.580260311860125,40
+49,Biased-prior,Cost-to-sample,5,0.500010192143272,40
+49,Biased-prior,Cost-to-sample,6,0.389167290781755,40
+49,Biased-prior,Cost-to-sample,7,0.232292017323245,40
+49,Cost-to-sample,Cost-to-sample,1,-1.65426168886106,40
+49,Cost-to-sample,Cost-to-sample,2,-1.64990799630305,40
+49,Cost-to-sample,Cost-to-sample,3,-1.6496780449511,40
+49,Cost-to-sample,Cost-to-sample,4,-1.65058011509662,40
+49,Cost-to-sample,Cost-to-sample,5,-1.6550543001191,40
+49,Cost-to-sample,Cost-to-sample,6,-1.66362567480719,40
+49,Cost-to-sample,Cost-to-sample,7,-1.669542856814,40
+50,Biased-prior,Biased-prior,1,0.8117699267143,40
+50,Biased-prior,Biased-prior,2,0.81737264487139,40
+50,Biased-prior,Biased-prior,3,0.810466719541718,40
+50,Biased-prior,Biased-prior,4,0.783885367100908,40
+50,Biased-prior,Biased-prior,5,0.741875277042299,40
+50,Biased-prior,Biased-prior,6,0.676056171751937,40
+50,Biased-prior,Biased-prior,7,0.572422497450705,40
+50,Cost-to-sample,Biased-prior,1,0.959507826404654,40
+50,Cost-to-sample,Biased-prior,2,0.935596202967117,40
+50,Cost-to-sample,Biased-prior,3,0.903016291447673,40
+50,Cost-to-sample,Biased-prior,4,0.855175327225461,40
+50,Cost-to-sample,Biased-prior,5,0.791153562796211,40
+50,Cost-to-sample,Biased-prior,6,0.704440625207913,40
+50,Cost-to-sample,Biased-prior,7,0.581522647782273,40
+51,Biased-prior,Biased-prior,1,0.724167231009676,40
+51,Biased-prior,Biased-prior,2,0.740808683647732,40
+51,Biased-prior,Biased-prior,3,0.757913933375312,40
+51,Biased-prior,Biased-prior,4,0.778255214853715,40
+51,Biased-prior,Biased-prior,5,0.802422336306444,40
+51,Biased-prior,Biased-prior,6,0.82850520656734,40
+51,Biased-prior,Biased-prior,7,0.800094430659258,40
+51,Cost-to-sample,Biased-prior,1,1.31379600059065,40
+51,Cost-to-sample,Biased-prior,2,1.22260471740244,40
+51,Cost-to-sample,Biased-prior,3,1.11962587118522,40
+51,Cost-to-sample,Biased-prior,4,1.00112235709839,40
+51,Cost-to-sample,Biased-prior,5,0.865174313276079,40
+51,Cost-to-sample,Biased-prior,6,0.712429463017327,40
+51,Cost-to-sample,Biased-prior,7,0.534991555967441,40
+52,Biased-prior,Cost-to-sample,1,0.84856559093073,40
+52,Biased-prior,Cost-to-sample,2,0.86050151065839,40
+52,Biased-prior,Cost-to-sample,3,0.872008903383229,40
+52,Biased-prior,Cost-to-sample,4,0.883917977178825,40
+52,Biased-prior,Cost-to-sample,5,0.895564541703415,40
+52,Biased-prior,Cost-to-sample,6,0.895044260193531,40
+52,Biased-prior,Cost-to-sample,7,0.813914179918803,40
+52,Cost-to-sample,Cost-to-sample,1,2.05205939254023,40
+52,Cost-to-sample,Cost-to-sample,2,1.84217779260952,40
+52,Cost-to-sample,Cost-to-sample,3,1.63655878773801,40
+52,Cost-to-sample,Cost-to-sample,4,1.43215107537235,40
+52,Cost-to-sample,Cost-to-sample,5,1.22403798517186,40
+52,Cost-to-sample,Cost-to-sample,6,1.02050192232149,40
+52,Cost-to-sample,Cost-to-sample,7,0.77829945891189,40
+53,Biased-prior,Biased-prior,1,0.812378086831136,40
+53,Biased-prior,Biased-prior,2,0.826932423271302,40
+53,Biased-prior,Biased-prior,3,0.840172997014117,40
+53,Biased-prior,Biased-prior,4,0.853335548763452,40
+53,Biased-prior,Biased-prior,5,0.865210595642299,40
+53,Biased-prior,Biased-prior,6,0.854425356299103,40
+53,Biased-prior,Biased-prior,7,0.759553315868178,40
+53,Cost-to-sample,Biased-prior,1,1.59324232535573,40
+53,Cost-to-sample,Biased-prior,2,1.46367123105222,40
+53,Cost-to-sample,Biased-prior,3,1.31825356153879,40
+53,Cost-to-sample,Biased-prior,4,1.17110412136069,40
+53,Cost-to-sample,Biased-prior,5,1.02186656604546,40
+53,Cost-to-sample,Biased-prior,6,0.859466370509958,40
+53,Cost-to-sample,Biased-prior,7,0.664007684802199,40
+54,Biased-prior,Biased-prior,1,0.737872700329822,40
+54,Biased-prior,Biased-prior,2,0.752767424880066,40
+54,Biased-prior,Biased-prior,3,0.757856523732601,40
+54,Biased-prior,Biased-prior,4,0.748956185503321,40
+54,Biased-prior,Biased-prior,5,0.720715221675684,40
+54,Biased-prior,Biased-prior,6,0.6653128065187,40
+54,Biased-prior,Biased-prior,7,0.54591267667482,40
+54,Cost-to-sample,Biased-prior,1,0.986239288233672,40
+54,Cost-to-sample,Biased-prior,2,0.946039901364125,40
+54,Cost-to-sample,Biased-prior,3,0.894242526011369,40
+54,Cost-to-sample,Biased-prior,4,0.827689549287199,40
+54,Cost-to-sample,Biased-prior,5,0.740526964455888,40
+54,Cost-to-sample,Biased-prior,6,0.641588676797487,40
+54,Cost-to-sample,Biased-prior,7,0.498472591331093,40
+55,Biased-prior,Cut off,1,0.822660365023932,40
+55,Biased-prior,Cut off,2,0.836866850895973,40
+55,Biased-prior,Cut off,3,0.851063854432042,40
+55,Biased-prior,Cut off,4,0.86721722775748,40
+55,Biased-prior,Cut off,5,0.886747606685775,40
+55,Biased-prior,Cut off,6,0.907903656930787,40
+55,Biased-prior,Cut off,7,0.878487999791449,40
+55,Cost-to-sample,Cut off,1,1.60729154468586,40
+55,Cost-to-sample,Cut off,2,1.47012825490233,40
+55,Cost-to-sample,Cut off,3,1.32513853798899,40
+55,Cost-to-sample,Cut off,4,1.17754285373241,40
+55,Cost-to-sample,Cut off,5,1.03054430045402,40
+55,Cost-to-sample,Cut off,6,0.869972968213337,40
+55,Cost-to-sample,Cut off,7,0.673122814357096,40
+56,Biased-prior,Biased-prior,1,0.709531032425375,40
+56,Biased-prior,Biased-prior,2,0.727909236219285,40
+56,Biased-prior,Biased-prior,3,0.740637648356677,40
+56,Biased-prior,Biased-prior,4,0.742510051582186,40
+56,Biased-prior,Biased-prior,5,0.719016902681206,40
+56,Biased-prior,Biased-prior,6,0.66300625324449,40
+56,Biased-prior,Biased-prior,7,0.543964944203175,40
+56,Cost-to-sample,Biased-prior,1,1.43667933657969,40
+56,Cost-to-sample,Biased-prior,2,1.31610550092094,40
+56,Cost-to-sample,Biased-prior,3,1.19033776554208,40
+56,Cost-to-sample,Biased-prior,4,1.05744856389207,40
+56,Cost-to-sample,Biased-prior,5,0.911064075148546,40
+56,Cost-to-sample,Biased-prior,6,0.74606772643135,40
+56,Cost-to-sample,Biased-prior,7,0.551163894976626,40
+57,Biased-prior,Biased-prior,1,0.850918286186871,40
+57,Biased-prior,Biased-prior,2,0.864125334720128,40
+57,Biased-prior,Biased-prior,3,0.876021269104259,40
+57,Biased-prior,Biased-prior,4,0.889600899317393,40
+57,Biased-prior,Biased-prior,5,0.90603557995629,40
+57,Biased-prior,Biased-prior,6,0.926549761552421,40
+57,Biased-prior,Biased-prior,7,0.925881722871089,40
+57,Cost-to-sample,Biased-prior,1,1.16950131534123,40
+57,Cost-to-sample,Biased-prior,2,1.11109501474077,40
+57,Cost-to-sample,Biased-prior,3,1.04349292183204,40
+57,Cost-to-sample,Biased-prior,4,0.969077409212396,40
+57,Cost-to-sample,Biased-prior,5,0.888344758332268,40
+57,Cost-to-sample,Biased-prior,6,0.785671255754402,40
+57,Cost-to-sample,Biased-prior,7,0.632268508884809,40
+58,Biased-prior,Cost-to-sample,1,0.850319198503585,40
+58,Biased-prior,Cost-to-sample,2,0.818396638117579,40
+58,Biased-prior,Cost-to-sample,3,0.778648875050599,40
+58,Biased-prior,Cost-to-sample,4,0.724484921829344,40
+58,Biased-prior,Cost-to-sample,5,0.656140437256282,40
+58,Biased-prior,Cost-to-sample,6,0.545356244076695,40
+58,Biased-prior,Cost-to-sample,7,0.348444704467179,40
+58,Cost-to-sample,Cost-to-sample,1,-98.8796664841,40
+58,Cost-to-sample,Cost-to-sample,2,-98.8899497190717,40
+58,Cost-to-sample,Cost-to-sample,3,-98.8893981678417,40
+58,Cost-to-sample,Cost-to-sample,4,-98.8913194389129,40
+58,Cost-to-sample,Cost-to-sample,5,-98.8870291934326,40
+58,Cost-to-sample,Cost-to-sample,6,-98.8860127116041,40
+58,Cost-to-sample,Cost-to-sample,7,-98.882998430039,40
+59,Biased-prior,Biased-prior,1,0.751733080821701,40
+59,Biased-prior,Biased-prior,2,0.767306416428813,40
+59,Biased-prior,Biased-prior,3,0.782300453546825,40
+59,Biased-prior,Biased-prior,4,0.798528309559555,40
+59,Biased-prior,Biased-prior,5,0.814667273528451,40
+59,Biased-prior,Biased-prior,6,0.803271270953755,40
+59,Biased-prior,Biased-prior,7,0.703355279007801,40
+59,Cost-to-sample,Biased-prior,1,1.5569188442588,40
+59,Cost-to-sample,Biased-prior,2,1.42686622480892,40
+59,Cost-to-sample,Biased-prior,3,1.28650949058989,40
+59,Cost-to-sample,Biased-prior,4,1.13839668944032,40
+59,Cost-to-sample,Biased-prior,5,0.977067461769193,40
+59,Cost-to-sample,Biased-prior,6,0.801080622354184,40
+59,Cost-to-sample,Biased-prior,7,0.594517969591824,40
+60,Biased-prior,Cost-to-sample,1,0.714480770350937,40
+60,Biased-prior,Cost-to-sample,2,0.685587838996355,40
+60,Biased-prior,Cost-to-sample,3,0.645700411685521,40
+60,Biased-prior,Cost-to-sample,4,0.591243447929668,40
+60,Biased-prior,Cost-to-sample,5,0.518538218328648,40
+60,Biased-prior,Cost-to-sample,6,0.417891842400351,40
+60,Biased-prior,Cost-to-sample,7,0.258771837414444,40
+60,Cost-to-sample,Cost-to-sample,1,-99.5034922746775,40
+60,Cost-to-sample,Cost-to-sample,2,-99.4994163737794,40
+60,Cost-to-sample,Cost-to-sample,3,-99.5033265564721,40
+60,Cost-to-sample,Cost-to-sample,4,-99.5078683405305,40
+60,Cost-to-sample,Cost-to-sample,5,-99.5133271878707,40
+60,Cost-to-sample,Cost-to-sample,6,-99.5166249575735,40
+60,Cost-to-sample,Cost-to-sample,7,-99.521369598885,40
+61,Biased-prior,Cost-to-sample,1,0.846953839487563,40
+61,Biased-prior,Cost-to-sample,2,0.859970919458375,40
+61,Biased-prior,Cost-to-sample,3,0.867648293593139,40
+61,Biased-prior,Cost-to-sample,4,0.866785869079721,40
+61,Biased-prior,Cost-to-sample,5,0.842265942544255,40
+61,Biased-prior,Cost-to-sample,6,0.78231382799303,40
+61,Biased-prior,Cost-to-sample,7,0.652164643221684,40
+61,Cost-to-sample,Cost-to-sample,1,0.742325208629763,40
+61,Cost-to-sample,Cost-to-sample,2,0.737923623328933,40
+61,Cost-to-sample,Cost-to-sample,3,0.720669115229123,40
+61,Cost-to-sample,Cost-to-sample,4,0.703511083418471,40
+61,Cost-to-sample,Cost-to-sample,5,0.66336184386782,40
+61,Cost-to-sample,Cost-to-sample,6,0.60605102165831,40
+61,Cost-to-sample,Cost-to-sample,7,0.506768994567961,40
+62,Biased-prior,Biased-prior,1,0.807292466179429,40
+62,Biased-prior,Biased-prior,2,0.82226273261428,40
+62,Biased-prior,Biased-prior,3,0.838562676763662,40
+62,Biased-prior,Biased-prior,4,0.85684765843581,40
+62,Biased-prior,Biased-prior,5,0.877218371792332,40
+62,Biased-prior,Biased-prior,6,0.89054052036012,40
+62,Biased-prior,Biased-prior,7,0.833319786475513,40
+62,Cost-to-sample,Biased-prior,1,1.9120687235934,40
+62,Cost-to-sample,Biased-prior,2,1.71638600239573,40
+62,Cost-to-sample,Biased-prior,3,1.52341001837145,40
+62,Cost-to-sample,Biased-prior,4,1.32994470408503,40
+62,Cost-to-sample,Biased-prior,5,1.12905490004806,40
+62,Cost-to-sample,Biased-prior,6,0.925593104528821,40
+62,Cost-to-sample,Biased-prior,7,0.680936863891082,40
+63,Biased-prior,Cost-to-sample,1,0.81977046320493,40
+63,Biased-prior,Cost-to-sample,2,0.792533358095743,40
+63,Biased-prior,Cost-to-sample,3,0.757372727363271,40
+63,Biased-prior,Cost-to-sample,4,0.711006174503844,40
+63,Biased-prior,Cost-to-sample,5,0.644926346739366,40
+63,Biased-prior,Cost-to-sample,6,0.545797692368408,40
+63,Biased-prior,Cost-to-sample,7,0.374765271711391,40
+63,Cost-to-sample,Cost-to-sample,1,0.247706111986828,40
+63,Cost-to-sample,Cost-to-sample,2,0.247012680792571,40
+63,Cost-to-sample,Cost-to-sample,3,0.245117837231884,40
+63,Cost-to-sample,Cost-to-sample,4,0.244880752797101,40
+63,Cost-to-sample,Cost-to-sample,5,0.246501607069949,40
+63,Cost-to-sample,Cost-to-sample,6,0.248885438849525,40
+63,Cost-to-sample,Cost-to-sample,7,0.233665775416527,40
+64,Biased-prior,Cost-to-sample,1,0.836184401804736,40
+64,Biased-prior,Cost-to-sample,2,0.849722758614824,40
+64,Biased-prior,Cost-to-sample,3,0.862286508281742,40
+64,Biased-prior,Cost-to-sample,4,0.876405234684163,40
+64,Biased-prior,Cost-to-sample,5,0.891775298016051,40
+64,Biased-prior,Cost-to-sample,6,0.892384187753397,40
+64,Biased-prior,Cost-to-sample,7,0.823007340910739,40
+64,Cost-to-sample,Cost-to-sample,1,2.67758981942044,40
+64,Cost-to-sample,Cost-to-sample,2,2.37692331369085,40
+64,Cost-to-sample,Cost-to-sample,3,2.07086382726728,40
+64,Cost-to-sample,Cost-to-sample,4,1.77265420708525,40
+64,Cost-to-sample,Cost-to-sample,5,1.47215002582259,40
+64,Cost-to-sample,Cost-to-sample,6,1.16821067722898,40
+64,Cost-to-sample,Cost-to-sample,7,0.850841823212057,40

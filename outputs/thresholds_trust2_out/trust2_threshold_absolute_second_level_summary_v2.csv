@@ -1,0 +1,43 @@
+Analysis,Subset,ModelOut,Measure,N,MeanValue,SDValue,Tstat,DF,P,NLinearBetter,NQuadraticBetter
+absolute_position,All participants,Cost-to-sample,Raw linear slope vs zero,64,-3.35573976806109,13.8875278295045,-1.93309554256689,63,0.0577215378481347,NaN,NaN
+absolute_position,All participants,Cost-to-sample,Standardised linear slope vs zero,64,-0.945124002566536,0.149197261134813,-50.6778205110632,63,8.90861359682957e-53,NaN,NaN
+absolute_position,All participants,Cost-to-sample,Linear R2,64,0.915171393227091,0.186631969530665,NaN,NaN,NaN,NaN,NaN
+absolute_position,All participants,Cost-to-sample,Quadratic R2,64,0.978784861601902,0.0753538491949964,NaN,NaN,NaN,NaN,NaN
+absolute_position,All participants,Cost-to-sample,Delta R2 quad-minus-linear vs zero,64,0.0636134683748108,0.141422443047052,3.59849353492763,63,0.000630088460035779,NaN,NaN
+absolute_position,All participants,Cost-to-sample,Delta BIC quad-minus-linear vs zero,64,-13.2041603195886,8.50833022101013,-12.4152777117021,63,1.39394745045112e-18,4,60
+absolute_position,All participants,Biased-prior,Raw linear slope vs zero,64,-0.0236016949947054,0.031001546536259,-6.09045615633432,63,7.44412472286247e-08,NaN,NaN
+absolute_position,All participants,Biased-prior,Standardised linear slope vs zero,64,-0.319660624217523,0.708976766777981,-3.60700817512262,63,0.000613224918088968,NaN,NaN
+absolute_position,All participants,Biased-prior,Linear R2,64,0.596977094633737,0.32348435071691,NaN,NaN,NaN,NaN,NaN
+absolute_position,All participants,Biased-prior,Quadratic R2,64,0.901936771419456,0.110032232593963,NaN,NaN,NaN,NaN,NaN
+absolute_position,All participants,Biased-prior,Delta R2 quad-minus-linear vs zero,64,0.304959676785719,0.237684585080625,10.2643484997489,63,4.48102732051772e-15,NaN,NaN
+absolute_position,All participants,Biased-prior,Delta BIC quad-minus-linear vs zero,64,-11.5156808269463,8.42877294655491,-10.9298764125832,63,3.47809490105138e-16,4,60
+absolute_position,Participants best fitted by cost-to-sample,Cost-to-sample,Raw linear slope vs zero,20,-5.24598555237066,11.0335151297559,-2.126317889835,19,0.0468038865515655,NaN,NaN
+absolute_position,Participants best fitted by cost-to-sample,Cost-to-sample,Standardised linear slope vs zero,20,-0.899830530683007,0.237841246219177,-16.9195399605561,19,6.50266450252785e-13,NaN,NaN
+absolute_position,Participants best fitted by cost-to-sample,Cost-to-sample,Linear R2,20,0.863435019431874,0.26555928994378,NaN,NaN,NaN,NaN,NaN
+absolute_position,Participants best fitted by cost-to-sample,Cost-to-sample,Quadratic R2,20,0.954909744073633,0.123226535131137,NaN,NaN,NaN,NaN,NaN
+absolute_position,Participants best fitted by cost-to-sample,Cost-to-sample,Delta R2 quad-minus-linear vs zero,20,0.091474724641759,0.183154827055838,2.23356059799275,19,0.0377319252029368,NaN,NaN
+absolute_position,Participants best fitted by cost-to-sample,Cost-to-sample,Delta BIC quad-minus-linear vs zero,20,-10.4504109089205,9.60441070681809,-4.86606204138336,19,0.000107296901934452,1,19
+absolute_position,Participants best fitted by cost-to-sample,Biased-prior,Raw linear slope vs zero,20,-0.029104407533247,0.0319774515829611,-4.07033271681188,19,0.000652486126890181,NaN,NaN
+absolute_position,Participants best fitted by cost-to-sample,Biased-prior,Standardised linear slope vs zero,20,-0.418665517612412,0.628089203232423,-2.980992357132,19,0.0076779374226337,NaN,NaN
+absolute_position,Participants best fitted by cost-to-sample,Biased-prior,Linear R2,20,0.550052060493953,0.359597702219186,NaN,NaN,NaN,NaN,NaN
+absolute_position,Participants best fitted by cost-to-sample,Biased-prior,Quadratic R2,20,0.884996008448257,0.131699483583834,NaN,NaN,NaN,NaN,NaN
+absolute_position,Participants best fitted by cost-to-sample,Biased-prior,Delta R2 quad-minus-linear vs zero,20,0.334943947954305,0.245255658443562,6.10756498774382,19,7.15142085007033e-06,NaN,NaN
+absolute_position,Participants best fitted by cost-to-sample,Biased-prior,Delta BIC quad-minus-linear vs zero,20,-12.7411172801587,8.86794406301598,-6.425391081694,19,3.68212004410103e-06,1,19
+absolute_position,Participants best fitted by biased-prior,Cost-to-sample,Raw linear slope vs zero,37,-0.142933107193158,0.204063605706994,-4.26057427418985,36,0.000139974683516851,NaN,NaN
+absolute_position,Participants best fitted by biased-prior,Cost-to-sample,Standardised linear slope vs zero,37,-0.959269630850237,0.0846944977261753,-68.8947868355501,36,7.97988097037441e-40,NaN,NaN
+absolute_position,Participants best fitted by biased-prior,Cost-to-sample,Linear R2,37,0.927177513482695,0.143931270524544,NaN,NaN,NaN,NaN,NaN
+absolute_position,Participants best fitted by biased-prior,Cost-to-sample,Quadratic R2,37,0.987691880649156,0.037915545140146,NaN,NaN,NaN,NaN,NaN
+absolute_position,Participants best fitted by biased-prior,Cost-to-sample,Delta R2 quad-minus-linear vs zero,37,0.0605143671664603,0.126796622462402,2.90303099559298,36,0.00627455676988883,NaN,NaN
+absolute_position,Participants best fitted by biased-prior,Cost-to-sample,Delta BIC quad-minus-linear vs zero,37,-15.7926918347516,7.38999645814578,-12.9990852754856,36,3.65671482382028e-15,2,35
+absolute_position,Participants best fitted by biased-prior,Biased-prior,Raw linear slope vs zero,37,-0.0265474641982533,0.0299554842845248,-5.39072975638692,36,4.53287779796789e-06,NaN,NaN
+absolute_position,Participants best fitted by biased-prior,Biased-prior,Standardised linear slope vs zero,37,-0.431341965813252,0.656356086782043,-3.99745016498231,36,0.000303736728404991,NaN,NaN
+absolute_position,Participants best fitted by biased-prior,Biased-prior,Linear R2,37,0.605215871352996,0.301783344902941,NaN,NaN,NaN,NaN,NaN
+absolute_position,Participants best fitted by biased-prior,Biased-prior,Quadratic R2,37,0.91213188394341,0.104088527501658,NaN,NaN,NaN,NaN,NaN
+absolute_position,Participants best fitted by biased-prior,Biased-prior,Delta R2 quad-minus-linear vs zero,37,0.306916012590415,0.225613533712243,8.27475723914075,36,7.55385533393484e-10,NaN,NaN
+absolute_position,Participants best fitted by biased-prior,Biased-prior,Delta BIC quad-minus-linear vs zero,37,-11.9579708993293,8.02100583324984,-9.06837606616799,36,7.920088946446e-11,2,35
+absolute_position,Cost-to-sample vs biased-prior best-fitted participants,Cost-to-sample,Standardised linear slope group difference,57,0.05943910016723,NaN,1.37566068316935,55,0.174503486529035,NaN,NaN
+absolute_position,Cost-to-sample vs biased-prior best-fitted participants,Cost-to-sample,Delta BIC quad-minus-linear group difference,57,5.34228092583101,NaN,2.34094878803472,55,0.0228875979890986,NaN,NaN
+absolute_position,Cost-to-sample vs biased-prior best-fitted participants,Cost-to-sample,Delta R2 quad-minus-linear group difference,57,0.0309603574752987,NaN,0.750190344073417,55,0.456337401048673,NaN,NaN
+absolute_position,Cost-to-sample vs biased-prior best-fitted participants,Biased-prior,Standardised linear slope group difference,57,0.0126764482008398,NaN,0.0706240200572636,55,0.943953166130822,NaN,NaN
+absolute_position,Cost-to-sample vs biased-prior best-fitted participants,Biased-prior,Delta BIC quad-minus-linear group difference,57,-0.783146380829402,NaN,-0.339019032220111,55,0.735886405204337,NaN,NaN
+absolute_position,Cost-to-sample vs biased-prior best-fitted participants,Biased-prior,Delta R2 quad-minus-linear group difference,57,0.02802793536389,NaN,0.43419501206687,55,0.665845459778809,NaN,NaN

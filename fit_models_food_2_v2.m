@@ -7,7 +7,7 @@ tic
 addpath(genpath('C:\matlab_files\fiance\parameter_recovery\beta_fixed_code\Model_fitting_imageTasks\FMINSEARCHBND'))
 
 Generate_params.do_models = [1 2 6];    %model identifiers: 1 cutoff, 2 Cs, 3 obsolete placeholder, 4 BV, 5 BR, 6 BPM, 7 Opt, 8 BPV
-Generate_params.comment = 'out_imageTask_food_2_COCSBMP_';     %The filename will already fill in basic parameters so only use special info for this.
+Generate_params.comment = 'out_imageTask_food_2_COCSBMP2_';     %The filename will already fill in basic parameters so only use special info for this.
 
     disp('Getting subject data ...');
     num_subs_found = 0;
