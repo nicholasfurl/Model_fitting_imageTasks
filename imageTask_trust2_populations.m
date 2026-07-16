@@ -381,20 +381,30 @@ figure('Color',[1 1 1], 'Name','Trust 2 Cs vs BP stop distributions');
 subplot(1,2,1); hold on; box off;
 plot(1:seq_length, stop_dist(:,1), '-o', 'LineWidth', 1.5);
 plot(1:seq_length, stop_dist(:,2), '-o', 'LineWidth', 1.5);
-xlabel('Stopping position');
-ylabel('Proportion of sequences');
-title('Observed stopping distribution');
-legend(groups_to_plot, 'Location','best');
+% xlabel('Stopping position');
+% ylabel('Proportion of sequences');
+ylabel(sprintf('Stopping decisions at position\n/ total sequences'))
+xlabel('Sequence position')
+%title('Observed stopping distribution');
+% legend(groups_to_plot, 'Location','best');
 set(gca,'FontName','Arial','FontSize',12);
 
 subplot(1,2,2); hold on; box off;
 plot(1:seq_length, reach_rate(:,1), '-o', 'LineWidth', 1.5);
 plot(1:seq_length, reach_rate(:,2), '-o', 'LineWidth', 1.5);
-xlabel('Sequence position');
-ylabel('Proportion of decisions reached');
-title('Exposure by position');
-legend(groups_to_plot, 'Location','best');
+% xlabel('Sequence position');
+% ylabel('Proportion of decisions reached');
+ylabel(sprintf('Sequences reaching position\n/ total sequences'))
+xlabel('Sequence position')
+%title('Exposure by position');
+% legend(groups_to_plot, 'Location','best');
 set(gca,'FontName','Arial','FontSize',12);
+
+lgd = legend({ ...
+    sprintf('Participants best fitted\nby cost to sample model'), ...
+    sprintf('Participants best fitted\nby biased prior model')}, ...
+    'Location','best');
+lgd.Box = 'off';
 
 saveas(gcf, [analysis_outdir filesep 'trust2_cs_vs_bp_stop_distribution.png']);
 

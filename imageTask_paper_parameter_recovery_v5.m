@@ -1,6 +1,6 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-function [] = imageTask_paper_parameter_recovery_v4;
+function [] = imageTask_paper_parameter_recovery_v5;
 
 %v5, 26 June 2024. Cleaned up the code a bit for paper submission
 

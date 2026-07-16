@@ -1,16 +1,12 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-function [] = imageTask_paper_parameter_recovery_hybrid_v2; 
+function [] = imageTask_paper_parameter_recovery_combinedModel; 
 
-%v4, brought in analyzeSecretaryPR.m, which uses improved BR and BV.
-%Cleaned upo a little in prep for GitHub and 
+%this code implements paramter recovery for the biased prior + cost
+%to sample combo model and makesthe supplementary figures. Use v5 for other
+%models, its optimised for them,
 
-%v3 adds a manipulation of preeconfigured betas
-
-%imageTask_paper_parameter_recovery is based on param_recover_v3_sweep_cleaner
-%and attempts to incoporate fitting of beta and using bounds when fitting
-%and integer values for cutoff instead of linspace. And I've tried to
-%simplify code as I went and saw suitable places to do so.
+%took v4 and modified it to run combo model with cs and bp parameters both
 
 tic
 
@@ -48,7 +44,7 @@ model_names = {'CO' 'Cs' 'IO' 'BV' 'BR' 'BPM' 'Opt' 'BPV' 'CsBPM'};
 num_model_identifiers = numel(model_names);
 
 % Keep this TRUE for a quick smoke test; set FALSE for the real diagnostic.
-quick_test = true;
+quick_test = false;
 if quick_test
     pr_num_subs = 5;
     Cs_levels = linspace(-5.5, 3.0, 3);   % 3 x 3 = 9 model configurations
@@ -65,7 +61,7 @@ num_param_levels = numel(Cs_levels) * numel(BP_levels);  % for file naming only
 total_params_per_model = num_param_levels * num_fit_betas;
 
 diagnostic_stamp = char(datetime('now','Format','yyyyMMdd_HHmmss'));
-comment = sprintf('HYBRID_CsBPM_PR_%s', diagnostic_stamp);
+comment = sprintf('COMBO_CsBPM_PR_%s', diagnostic_stamp);
 outpath = 'C:\matlab_files\fiance\parameter_recovery\beta_fixed_code\Model_fitting_imageTasks\outputs';
 if ~exist(outpath, 'dir'); mkdir(outpath); end
 filename_for_plots = '';  % fill manually only if use_file_for_plots==1
